@@ -1,13 +1,15 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
+
 <head>
+
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-        <title>作家管理系统-小说精品屋</title>
-        <link rel="stylesheet" href="/css/base.css?v=1"/>
-        <link rel="stylesheet" href="/css/user.css"/>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <title>Author Management System</title>
+        <link rel="stylesheet" href="/css/base.css?v=1" />
+        <link rel="stylesheet" href="/css/user.css" />
         <style type="text/css">
             .redBtn {
                 padding: 5px;
@@ -24,78 +26,81 @@
         </style>
     </head>
 </head>
+
 <body class="">
 
-<div class="header">
-    <div class="mainNav" id="mainNav">
-        <div class="box_center cf"
-             style="text-align: center;height: 44px;line-height: 48px;color: #fff;font-size: 16px;">
+    <div class="header">
+        <div class="mainNav" id="mainNav">
+            <div class="box_center cf"
+                style="text-align: center;height: 44px;line-height: 48px;color: #fff;font-size: 16px;">
 
-            小说精品屋作家管理
-
-        </div>
-    </div>
-</div>
-
-<div class="main box_center cf">
-    <div class="userBox cf">
-        <div class="my_l">
-
-            <ul class="log_list">
-                <li><a class="link_4 on" href="/author/index.html">小说管理</a></li>
-                <li><a class="link_2 " href="/author/author_income_detail.html">稿费收入</a></li>
-                <!-- <li><a class="link_1 " href="/user/userinfo.html">批量小说爬取</a></li>
-                 <li><a class="link_4 " href="/user/favorites.html">单本小说爬取</a></li>-->
-            </ul>
-
-        </div>
-        <div class="my_r">
-            <div id="noContentDiv">
-                <div class="tc" style="margin-top: 200px"><a href="/author/book_add.html" class="btn_red">创建作品</a></div>
+                Author Management
 
             </div>
-            <div class="my_bookshelf" id="hasContentDiv" style="display: none">
-                <div class="title cf">
-                    <h2 class="fl">小说列表</h2>
-                    <div class="fr"><a href="/author/book_add.html" class="btn_red">发布小说</a></div>
-                </div>
+        </div>
+    </div>
 
-                <div id="divData" class="updateTable">
-                    <table cellpadding="0" cellspacing="0">
-                        <thead>
-                        <tr>
-                            <th class="goread">
-                                书名
-                            </th>
-                            <th class="goread">
-                                分类
-                            </th>
-                            <th class="goread">
-                                点击量
-                            </th>
-                            <th class="goread">
-                                昨日订阅数
-                            </th>
-                            <th class="goread">
-                                更新时间
-                            </th>
-                            <th class="goread">
-                                总字数
-                            </th>
-                            <th class="goread">
-                                操作
-                            </th>
-                        </tr>
-                        </thead>
-                        <tbody id="bookList">
+    <div class="main box_center cf">
+        <div class="userBox cf">
+            <div class="my_l">
 
+                <ul class="log_list">
+                    <li><a class="link_4 on" href="/author/index.html">Management</a></li>
+                    <li><a class="link_2 " href="/author/author_income_detail.html">Manuscript Fee</a></li>
+                    <!-- <li><a class="link_1 " href="/user/userinfo.html">批量小说爬取</a></li>
+                 <li><a class="link_4 " href="/user/favorites.html">单本小说爬取</a></li>-->
+                </ul>
 
-                        </tbody>
-                    </table>
-                    <div class="pageBox cf" id="shellPage">
+            </div>
+            <div class="my_r">
+                <div id="noContentDiv">
+                    <div class="tc" style="margin-top: 200px"><a href="/author/book_add.html" class="btn_red">Create New
+                            Story</a>
                     </div>
+
                 </div>
-                <!--<div id="divData" class="updateTable">
+                <div class="my_bookshelf" id="hasContentDiv" style="display: none">
+                    <div class="title cf">
+                        <h2 class="fl">Novel List</h2>
+                        <div class="fr"><a href="/author/book_add.html" class="btn_red">Publish</a></div>
+                    </div>
+
+                    <div id="divData" class="updateTable">
+                        <table cellpadding="0" cellspacing="0">
+                            <thead>
+                                <tr>
+                                    <th class="goread">
+                                        Book Title
+                                    </th>
+                                    <th class="goread">
+                                        Category
+                                    </th>
+                                    <th class="goread">
+                                        Clicks
+                                    </th>
+                                    <th class="goread">
+                                        Yesterday's Subscription Count
+                                    </th>
+                                    <th class="goread">
+                                        Update Time
+                                    </th>
+                                    <th class="goread">
+                                        Total Words
+                                    </th>
+                                    <th class="goread">
+                                        Operate
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody id="bookList">
+
+
+                            </tbody>
+                        </table>
+                        <div class="pageBox cf" id="shellPage">
+                        </div>
+                    </div>
+                    <!--<div id="divData" class="updateTable">
                     <table cellpadding="0" cellspacing="0">
                         <thead>
                         <tr>
@@ -126,10 +131,10 @@
                     <div class="pageBox cf" id="shellPage">
                     </div>
                 </div>-->
+                </div>
             </div>
         </div>
     </div>
-</div>
 
 
 </body>
@@ -149,7 +154,7 @@
         $.ajax({
             type: "get",
             url: "/author/listBookByPage",
-            data: {'curr': curr, 'limit': limit},
+            data: { 'curr': curr, 'limit': limit },
             dataType: "json",
             success: function (data) {
                 if (data.code == 200) {
@@ -185,16 +190,16 @@
                                 + book.yesterdayBuy + "</td>\n" +
 
                                 "                            <td class=\"goread\">\n" +
-                                "                                " + new Date(Date.parse(book.lastIndexUpdateTime ? book.lastIndexUpdateTime : book.updateTime)).Format("yyyy-MM-dd hh:mm") + "更新\n" +
+                                "                                " + new Date(Date.parse(book.lastIndexUpdateTime ? book.lastIndexUpdateTime : book.updateTime)).Format("yyyy-MM-dd hh:mm") + "Update\n" +
                                 "                            </td>\n" +
 
                                 "                            <td class=\"goread\" valsc=\"291|2037554|1\">"
                                 + book.wordCount + "</td>\n" +
 
                                 " <td class=\"goread\" id='opt" + book.id + "'>" +
-                                "<a target='_blank' class='redBtn' href='/author/index_list.html?bookId=" + book.id + "'>章节管理  </a><br/>" +
-                                "<a target='_blank' href='/author/author_income_detail.html?bookId=" + book.id + "'>薪酬查询  </a><br/>" +
-                                "<a target='_blank' href='/book/" + book.id + ".html'>作品信息</a>" +
+                                "<a target='_blank' class='redBtn' href='/author/index_list.html?bookId=" + book.id + "'>Chapter Management  </a><br/>" +
+                                "<a target='_blank' href='/author/author_income_detail.html?bookId=" + book.id + "'>Salary Inquiry  </a><br/>" +
+                                "<a target='_blank' href='/book/" + book.id + ".html'>Information</a>" +
                                 "</td>                     </tr>");
                         }
                         $("#bookList").html(bookListHtml);
@@ -239,7 +244,7 @@
 
             },
             error: function () {
-                layer.alert('网络异常');
+                layer.alert('Network Exception');
             }
         })
 
@@ -251,7 +256,7 @@
         $.ajax({
             type: "POST",
             url: "/author/updateBookStatus",
-            data: {'bookId': bookId, 'status': status == 0 ? 1 : 0},
+            data: { 'bookId': bookId, 'status': status == 0 ? 1 : 0 },
             dataType: "json",
             success: function (data) {
                 if (data.code == 200) {
@@ -269,7 +274,7 @@
 
             },
             error: function () {
-                layer.alert('网络异常');
+                layer.alert('Network Exception');
             }
         })
 
@@ -293,7 +298,7 @@
                             $.ajax({
                                 type: "POST",
                                 url: "/author/updateBookPic",
-                                data: {'bookId': bookId, 'bookPic': data.data},
+                                data: { 'bookId': bookId, 'bookPic': data.data },
                                 dataType: "json",
                                 success: function (data) {
                                     if (data.code == 200) {
@@ -308,7 +313,7 @@
                                 },
                                 error: function () {
                                     lock = false;
-                                    layer.alert('网络异常');
+                                    layer.alert('Network Exception');
                                 }
                             })
 
@@ -321,10 +326,11 @@
                 });
             }
         } else {
-            alert("请选择上传文件！");
+            alert("Please choose the file to upload!");
         }
 
 
     }
 </script>
+
 </html>

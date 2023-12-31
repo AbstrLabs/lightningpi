@@ -1,193 +1,222 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <head th:replace="common/header :: common_head(~{::title},~{::meta},~{::link},~{})">
-    <title th:text="${application.website.name}+'_原创小说网站'"></title>
-    <meta name="keywords" th:content="${application.website.keyword}"/>
-    <meta name="description"
-          th:content="${application.website.description}"/>
-    <link href="favicon.ico" type="image/x-icon" rel="shortcut icon"/>
-    <link href="favicon.ico" type="image/x-icon" rel="Bookmark"/>
-    <link rel="stylesheet" href="/css/main.css"/>
+    <title th:text="${application.website.name}"></title>
+    <meta name="keywords" th:content="${application.website.keyword}" />
+    <meta name="description" th:content="${application.website.description}" />
+    <link href="favicon.ico" type="image/x-icon" rel="shortcut icon" />
+    <link href="favicon.ico" type="image/x-icon" rel="Bookmark" />
+    <link rel="stylesheet" href="/css/main.css" />
 </head>
+
 <body>
 
 
-<div th:replace="common/top :: top('0')">
-</div>
+    <div th:replace="common/top :: top('0')">
+    </div>
 
-<div class="main box_center cf">
-    <div class="channelWrap channelBanner cf">
-        <div class="leftBox">
-            <div class="sliderContent">
-                <dl class="scBigImg" id="carouseBig" th:if="${bookMap['0']}" >
-                    <dd th:each="book,iterStat : ${bookMap['0']}" th:class="${iterStat.first}? 'on'"><a th:href="'/book/'+${book.bookId}+'.html'">
-                        <img th:src="${book.picUrl}" th:alt="${book.bookName}"/></a></dd>
-                </dl>
-                <div class="scSmallImg" id="carouseSmall" >
-                    <ul th:if="${bookMap['0']}">
-                        <li th:each="book,iterStat : ${bookMap['0']}" th:class="${iterStat.first}? 'on'">
-                        <img th:src="${book.picUrl}" th:alt="${book.bookName}"/></li>
-                    </ul>
+    <div class="main box_center cf">
+        <div class="channelWrap channelBanner cf">
+            <div class="leftBox">
+                <div class="sliderContent">
+                    <dl class="scBigImg" id="carouseBig" th:if="${bookMap['0']}">
+                        <dd th:each="book,iterStat : ${bookMap['0']}" th:class="${iterStat.first}? 'on'"><a
+                                th:href="'/book/'+${book.bookId}+'.html'">
+                                <img th:src="${book.picUrl}" th:alt="${book.bookName}" /></a></dd>
+                    </dl>
+                    <div class="scSmallImg" id="carouseSmall">
+                        <ul th:if="${bookMap['0']}">
+                            <li th:each="book,iterStat : ${bookMap['0']}" th:class="${iterStat.first}? 'on'">
+                                <img th:src="${book.picUrl}" th:alt="${book.bookName}" />
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="hot_articles">
+                    <dl class="hot_recommend" id="topBooks1"
+                        th:if="${bookMap['1']} and ${#lists.size(bookMap['1']) > 0}">
+                        <dt><a th:href="'/book/'+${bookMap['1'][0].bookId}+'.html'"
+                                th:text="${bookMap['1'][0].bookName}"></a></dt>
+                        <dd th:if="${#lists.size(bookMap['1']) > 1}"><a
+                                th:href="'/book/'+${bookMap['1'][1].bookId}+'.html'"
+                                th:text="${bookMap['1'][1].bookName}"></a><a th:if="${#lists.size(bookMap['1']) > 2}"
+                                th:href="'/book/'+${bookMap['1'][2].bookId}+'.html'"
+                                th:text="${bookMap['1'][2].bookName}"></a></dd>
+                        <dd th:if="${#lists.size(bookMap['1']) > 3}"><a
+                                th:href="'/book/'+${bookMap['1'][3].bookId}+'.html'"
+                                th:text="${bookMap['1'][3].bookName}"></a><a th:if="${#lists.size(bookMap['1']) > 4}"
+                                th:href="'/book/'+${bookMap['1'][4].bookId}+'.html'"
+                                th:text="${bookMap['1'][4].bookName}"></a></dd>
+                    </dl>
+                    <dl class="hot_recommend" id="topBooks2"
+                        th:if="${bookMap['1']} and ${#lists.size(bookMap['1']) > 5}">
+                        <dt><a th:href="'/book/'+${bookMap['1'][5].bookId}+'.html'"
+                                th:text="${bookMap['1'][5].bookName}"></a></dt>
+                        <dd th:if="${#lists.size(bookMap['1']) > 6}"><a
+                                th:href="'/book/'+${bookMap['1'][6].bookId}+'.html'"
+                                th:text="${bookMap['1'][6].bookName}"></a><a th:if="${#lists.size(bookMap['1']) > 7}"
+                                th:href="'/book/'+${bookMap['1'][7].bookId}+'.html'"
+                                th:text="${bookMap['1'][7].bookName}"></a></dd>
+                        <dd th:if="${#lists.size(bookMap['1']) > 8}"><a
+                                th:href="'/book/'+${bookMap['1'][8].bookId}+'.html'"
+                                th:text="${bookMap['1'][8].bookName}"></a><a th:if="${#lists.size(bookMap['1']) > 9}"
+                                th:href="'/book/'+${bookMap['1'][9].bookId}+'.html'"
+                                th:text="${bookMap['1'][9].bookName}"></a></dd>
+                    </dl>
+
+                    <dl class="hot_notice" id="indexNews">
+                        <dd style="text-align:left;" th:each="news : ${newsList}"><span
+                                th:text="'['+${news.catName}+']'"></span><a
+                                th:href="'/about/newsInfo-'+${news.id}+'.html'" th:utext="${news.title}"></a>
+                        </dd>
+
+                    </dl>
                 </div>
             </div>
-            <div class="hot_articles">
-                <dl class="hot_recommend" id="topBooks1" th:if="${bookMap['1']} and ${#lists.size(bookMap['1']) > 0}">
-                    <dt><a th:href="'/book/'+${bookMap['1'][0].bookId}+'.html'" th:text="${bookMap['1'][0].bookName}"></a></dt>
-                    <dd th:if="${#lists.size(bookMap['1']) > 1}"><a th:href="'/book/'+${bookMap['1'][1].bookId}+'.html'" th:text="${bookMap['1'][1].bookName}"></a><a th:if="${#lists.size(bookMap['1']) > 2}" th:href="'/book/'+${bookMap['1'][2].bookId}+'.html'" th:text="${bookMap['1'][2].bookName}"></a></dd>
-                    <dd th:if="${#lists.size(bookMap['1']) > 3}"><a th:href="'/book/'+${bookMap['1'][3].bookId}+'.html'" th:text="${bookMap['1'][3].bookName}"></a><a th:if="${#lists.size(bookMap['1']) > 4}" th:href="'/book/'+${bookMap['1'][4].bookId}+'.html'" th:text="${bookMap['1'][4].bookName}"></a></dd>
-                </dl>
-                <dl class="hot_recommend" id="topBooks2" th:if="${bookMap['1']} and ${#lists.size(bookMap['1']) > 5}">
-                    <dt><a th:href="'/book/'+${bookMap['1'][5].bookId}+'.html'" th:text="${bookMap['1'][5].bookName}"></a></dt>
-                    <dd th:if="${#lists.size(bookMap['1']) > 6}"><a th:href="'/book/'+${bookMap['1'][6].bookId}+'.html'" th:text="${bookMap['1'][6].bookName}"></a><a th:if="${#lists.size(bookMap['1']) > 7}" th:href="'/book/'+${bookMap['1'][7].bookId}+'.html'" th:text="${bookMap['1'][7].bookName}"></a></dd>
-                    <dd th:if="${#lists.size(bookMap['1']) > 8}"><a th:href="'/book/'+${bookMap['1'][8].bookId}+'.html'" th:text="${bookMap['1'][8].bookName}"></a><a th:if="${#lists.size(bookMap['1']) > 9}" th:href="'/book/'+${bookMap['1'][9].bookId}+'.html'" th:text="${bookMap['1'][9].bookName}"></a></dd>
-                </dl>
-
-                <dl class="hot_notice" id="indexNews">
-                    <dd style="text-align:left;" th:each="news : ${newsList}"><span th:text="'['+${news.catName}+']'"></span><a th:href="'/about/newsInfo-'+${news.id}+'.html'" th:utext="${news.title}"></a>
-                    </dd>
-
-                </dl>
-            </div>
-        </div>
-        <div class="rightBox">
-            <div class="title cf" id="weekcommend">
-                <h3>本周强推</h3>
-            </div>
-            <div class="rightList">
-                <ul id="currentWeek" th:if="${bookMap['2']}">
-                    <li th:each="book,iterStat : ${bookMap['2']}"  th:class="${iterStat.first}? 'on num1': (${iterStat.index < 3}? 'num'+${iterStat.index+1})">
-                        <div class="book_name"><i th:text="${iterStat.index+1}"></i><a class="name" th:href="'/book/'+${book.bookId}+'.html'" th:text="${book.bookName}"></a></div>
-                        <div class="book_intro">
-                            <div class="cover"><a th:href="'/book/'+${book.bookId}+'.html'"><img th:src="${book.picUrl}" th:alt="${book.bookName}"></a>
+            <div class="rightBox">
+                <div class="title cf" id="weekcommend">
+                    <h3>Weekly Recommend</h3>
+                </div>
+                <div class="rightList">
+                    <ul id="currentWeek" th:if="${bookMap['2']}">
+                        <li th:each="book,iterStat : ${bookMap['2']}"
+                            th:class="${iterStat.first}? 'on num1': (${iterStat.index < 3}? 'num'+${iterStat.index+1})">
+                            <div class="book_name"><i th:text="${iterStat.index+1}"></i><a class="name"
+                                    th:href="'/book/'+${book.bookId}+'.html'" th:text="${book.bookName}"></a></div>
+                            <div class="book_intro">
+                                <div class="cover"><a th:href="'/book/'+${book.bookId}+'.html'"><img
+                                            th:src="${book.picUrl}" th:alt="${book.bookName}"></a>
+                                </div>
+                                <a class="txt" th:href="'/book/'+${book.bookId}+'.html'"
+                                    th:utext="${book.bookDesc}"></a>
                             </div>
-                            <a class="txt" th:href="'/book/'+${book.bookId}+'.html'" th:utext="${book.bookDesc}"></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="channelWrap channelPic cf">
+            <div class="leftBox">
+                <div class="title">
+                    <h2 class="on">Popular Recommendations</h2>
+                </div>
+                <div class="picRecommend cf" id="hotRecBooks" th:if="${bookMap['3']}">
+                    <div class="itemsList" th:each="book : ${bookMap['3']}">
+                        <a class="items_img" th:href="'/book/'+${book.bookId}+'.html'">
+                            <img class="lazyload" src="/images/default.gif" th:data-src="${book.picUrl}"
+                                th:alt="${book.bookName}">
+                        </a>
+                        <div class="items_txt">
+                            <h4><a th:href="'/book/'+${book.bookId}+'.html'" th:text="${book.bookName}"></a></h4>
+                            <p class="author"><a href="javascript:void(0)" th:text="'Author: '+${book.authorName}"></a>
+                            </p>
+                            <p class="intro"><a th:href="'/book/'+${book.bookId}+'.html'"
+                                    th:utext="${book.bookDesc}"></a>
+                            </p>
                         </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </div>
+                    </div>
 
-    <div class="channelWrap channelPic cf">
-        <div class="leftBox">
-            <div class="title">
-                <h2 class="on">热门推荐</h2>
+                </div>
             </div>
-            <div class="picRecommend cf" id="hotRecBooks" th:if="${bookMap['3']}">
-                <div class="itemsList" th:each="book : ${bookMap['3']}">
-                    <a class="items_img" th:href="'/book/'+${book.bookId}+'.html'">
-                        <img class="lazyload" src="/images/default.gif" th:data-src="${book.picUrl}" th:alt="${book.bookName}">
-                    </a>
-                    <div class="items_txt">
-                        <h4><a th:href="'/book/'+${book.bookId}+'.html'" th:text="${book.bookName}"></a></h4>
-                        <p class="author"><a href="javascript:void(0)" th:text="'作者：'+${book.authorName}"></a></p>
-                        <p class="intro"><a th:href="'/book/'+${book.bookId}+'.html'" th:utext="${book.bookDesc}"></a>
-                        </p>
+            <div id="bookrank1_ShowBookRank">
+                <div class="rightBox ">
+                    <div class="title cf">
+                        <h3 class="on">Leaderboard</h3>
+                    </div>
+                    <div class="rightList">
+                        <ul id="clickRankBooks">
+
+
+                        </ul>
+                        <div class="more"><a href="/book/book_ranking.html">More&gt;</a></div>
                     </div>
                 </div>
-
             </div>
         </div>
-        <div id="bookrank1_ShowBookRank">
-            <div class="rightBox ">
-                <div class="title cf">
-                    <h3 class="on">点击榜单</h3>
+        <div class="channelWrap channelPic cf">
+            <div class="leftBox">
+                <div class="title">
+                    <h2>Quality Novels</h2>
                 </div>
-                <div class="rightList">
-                    <ul id="clickRankBooks">
+                <div class="picRecommend cf" id="classicBooks" th:if="${bookMap['4']}">
+                    <div class="itemsList" th:each="book : ${bookMap['4']}">
+                        <a class="items_img" th:href="'/book/'+${book.bookId}+'.html'">
+                            <img class="lazyload" src="/images/default.gif" th:data-src="${book.picUrl}"
+                                th:alt="${book.bookName}">
+                        </a>
+                        <div class="items_txt">
+                            <h4><a th:href="'/book/'+${book.bookId}+'.html'" th:text="${book.bookName}"></a></h4>
+                            <p class="author"><a href="javascript:void(0)" th:text="'Author: '+${book.authorName}"></a>
+                            </p>
+                            <p class="intro"><a th:href="'/book/'+${book.bookId}+'.html'"
+                                    th:utext="${book.bookDesc}"></a>
+                            </p>
+                        </div>
+                    </div>
 
-
-                    </ul>
-                    <div class="more"><a href="/book/book_ranking.html">查看更多&gt;</a></div>
                 </div>
             </div>
-        </div>
-    </div>
-    <div class="channelWrap channelPic cf">
-        <div class="leftBox">
-            <div class="title">
-                <h2>精品推荐</h2>
-            </div>
-            <div class="picRecommend cf" id="classicBooks" th:if="${bookMap['4']}">
-                <div class="itemsList" th:each="book : ${bookMap['4']}">
-                    <a class="items_img" th:href="'/book/'+${book.bookId}+'.html'">
-                        <img class="lazyload" src="/images/default.gif" th:data-src="${book.picUrl}" th:alt="${book.bookName}">
-                    </a>
-                    <div class="items_txt">
-                        <h4><a th:href="'/book/'+${book.bookId}+'.html'" th:text="${book.bookName}"></a></h4>
-                        <p class="author"><a href="javascript:void(0)" th:text="'作者：'+${book.authorName}"></a></p>
-                        <p class="intro"><a th:href="'/book/'+${book.bookId}+'.html'" th:utext="${book.bookDesc}"></a>
-                        </p>
+            <div id="bookrank2_ShowBookRank">
+                <div class="rightBox ">
+                    <div class="title cf">
+                        <h3 class="on">New Books</h3>
+                    </div>
+                    <div class="rightList">
+                        <ul id="newRankBooks">
+
+
+                        </ul>
+                        <div class="more"><a href="/book/book_ranking.html?type=1">More&gt;</a></div>
                     </div>
                 </div>
-
             </div>
         </div>
-        <div id="bookrank2_ShowBookRank">
-            <div class="rightBox ">
-                <div class="title cf">
-                    <h3 class="on">新书榜单</h3>
+        <div class="channelWrap channelTable cf">
+            <div class="leftBox">
+                <div class="title">
+                    <h2>Latest Updates</h2>
                 </div>
-                <div class="rightList">
-                    <ul id="newRankBooks">
+                <div class="updateTable">
+                    <table cellpadding="0" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th class="style">Category</th>
+                                <th class="name">Title</th>
+                                <th class="chapter">Latest Chapter</th>
+                                <th class="author">Author</th>
+                                <th class="time">Update</th>
+                            </tr>
+                        </thead>
+                        <tbody id="newRankBooks2">
 
 
-                    </ul>
-                    <div class="more"><a href="/book/book_ranking.html?type=1">查看更多&gt;</a></div>
+                        </tbody>
+                    </table>
                 </div>
             </div>
+            <div id="bookrank5_ShowBookRank">
+                <div class="rightBox mb20">
+                    <div class="title cf">
+                        <h3 class="on">Updated Leaderboard</h3>
+                    </div>
+                    <div class="rightList">
+                        <ul id="updateRankBooks">
+
+
+                        </ul>
+                        <div class="more"><a href="/book/book_ranking.html?type=2">More&gt;</a></div>
+                    </div>
+                </div>
+            </div>
+
         </div>
     </div>
-    <div class="channelWrap channelTable cf">
-        <div class="leftBox">
-            <div class="title">
-                <h2>最新更新</h2>
-            </div>
-            <div class="updateTable">
-                <table cellpadding="0" cellspacing="0">
-                    <thead>
-                    <tr>
-                        <th class="style">类别</th>
-                        <th class="name">书名</th>
-                        <th class="chapter">最新章节</th>
-                        <th class="author">作者</th>
-                        <th class="time">更新时间</th>
-                    </tr>
-                    </thead>
-                    <tbody id="newRankBooks2">
 
-
-                    </tbody>
-                </table>
-            </div>
-        </div>
-        <div id="bookrank5_ShowBookRank">
-            <div class="rightBox mb20">
-                <div class="title cf">
-                    <h3 class="on">更新榜单</h3>
-                </div>
-                <div class="rightList">
-                    <ul id="updateRankBooks">
-
-
-                    </ul>
-                    <div class="more"><a href="/book/book_ranking.html?type=2">查看更多&gt;</a></div>
-                </div>
-            </div>
-        </div>
-
+    <div th:replace="common/footer :: footer">
     </div>
-</div>
-<div class="friend_link">
-    <div class="box_center cf" id="friendLink">
-        <span>友情链接：</span>
-    </div>
-</div>
-
-<div th:replace="common/footer :: footer">
-</div>
 
 
 </body>
@@ -260,7 +289,7 @@
                             "                            </div>\n" +
                             "                            <div class=\"book_intro\">\n" +
                             "                                <div class=\"cover\">\n" +
-                            "                                    <a href=\"book/" + clickRankBook.id + ".html\">"+ imageHtml +"</a>\n" +
+                            "                                    <a href=\"book/" + clickRankBook.id + ".html\">" + imageHtml + "</a>\n" +
                             "                                </div>\n" +
                             "                                <a class=\"txt\" href=\"/book/" + clickRankBook.id + ".html\">" + clickRankBook.bookDesc + "</a>\n" +
                             "                            </div>\n" +
@@ -274,7 +303,7 @@
 
             },
             error: function () {
-                layer.alert('网络异常');
+                layer.alert('Network Exception');
             }
         })
         //新书榜单查询
@@ -318,7 +347,7 @@
 
             },
             error: function () {
-                layer.alert('网络异常');
+                layer.alert('Network Exception');
             }
         })
         //更新榜单查询
@@ -376,7 +405,7 @@
             }
             ,
             error: function () {
-                layer.alert('网络异常');
+                layer.alert('Network Exception');
             }
         })
         //友情链接查询
@@ -400,7 +429,7 @@
 
             },
             error: function () {
-                layer.alert('网络异常');
+                layer.alert('Network Exception');
             }
         })
         $("#weekcommend h3").mouseover(function () {
@@ -416,4 +445,5 @@
         });
     });
 </script>
+
 </html>

@@ -1,13 +1,15 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
+
 <head>
+
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-        <title>作家管理系统-小说精品屋</title>
-        <link rel="stylesheet" href="/css/base.css?v=1"/>
-        <link rel="stylesheet" href="/css/user.css"/>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <title>Author Management System</title>
+        <link rel="stylesheet" href="/css/base.css?v=1" />
+        <link rel="stylesheet" href="/css/user.css" />
         <style type="text/css">
             .redBtn {
                 padding: 5px;
@@ -24,71 +26,73 @@
         </style>
     </head>
 </head>
+
 <body class="">
 
-<div class="header">
-    <div class="mainNav" id="mainNav">
-        <div class="box_center cf"
-             style="text-align: center;height: 44px;line-height: 48px;color: #fff;font-size: 16px;">
+    <div class="header">
+        <div class="mainNav" id="mainNav">
+            <div class="box_center cf"
+                style="text-align: center;height: 44px;line-height: 48px;color: #fff;font-size: 16px;">
 
-            小说精品屋作家管理
-
-        </div>
-    </div>
-</div>
-
-<div class="main box_center cf">
-    <div class="userBox cf">
-        <div class="my_l">
-
-            <ul class="log_list">
-                <li><a class="link_4 on" href="/author/index.html">作品管理</a></li>
-                <li><a class="link_2 " href="/author/author_income_detail.html">稿费收入</a></li>
-            </ul>
-
-        </div>
-        <div class="my_r">
-            <div id="noContentDiv">
-                <div class="tc" style="margin-top: 200px"><a href="javascript:addContent()" class="btn_red">新建章节</a>
-                </div>
+                Author Management
 
             </div>
-            <div class="my_bookshelf" id="hasContentDiv" style="display: none">
-                <div class="title cf">
-                    <h2 class="fl">章节列表</h2>
-                    <div class="fr"><a href="javascript:addContent()" class="btn_red">新建章节</a></div>
-                </div>
+        </div>
+    </div>
 
-                <div id="divData" class="updateTable">
-                    <table cellpadding="0" cellspacing="0">
-                        <thead>
-                        <tr>
-                            <!-- <th class="style">
+    <div class="main box_center cf">
+        <div class="userBox cf">
+            <div class="my_l">
+
+                <ul class="log_list">
+                    <li><a class="link_4 on" href="/author/index.html">Management</a></li>
+                    <li><a class="link_2 " href="/author/author_income_detail.html">Manuscript Fee</a></li>
+                </ul>
+
+            </div>
+            <div class="my_r">
+                <div id="noContentDiv">
+                    <div class="tc" style="margin-top: 200px"><a href="javascript:addContent()" class="btn_red">Create
+                            New Chapter</a>
+                    </div>
+
+                </div>
+                <div class="my_bookshelf" id="hasContentDiv" style="display: none">
+                    <div class="title cf">
+                        <h2 class="fl">Chapter List</h2>
+                        <div class="fr"><a href="javascript:addContent()" class="btn_red">Create New Chapter</a></div>
+                    </div>
+
+                    <div id="divData" class="updateTable">
+                        <table cellpadding="0" cellspacing="0">
+                            <thead>
+                                <tr>
+                                    <!-- <th class="style">
                                  序号
                              </th>-->
-                            <th class="name">
-                                章节名
-                            </th>
-                            <th class="goread">
-                                更新时间
-                            </th>
-                            <th class="goread">
-                                是否收费
-                            </th>
-                            <th class="goread">
-                                操作
-                            </th>
-                        </tr>
-                        </thead>
-                        <tbody id="bookList">
+                                    <th class="name">
+                                        Title
+                                    </th>
+                                    <th class="goread">
+                                        Update Time
+                                    </th>
+                                    <th class="goread">
+                                        Free Or Charge
+                                    </th>
+                                    <th class="goread">
+                                        Operate
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody id="bookList">
 
 
-                        </tbody>
-                    </table>
-                    <div class="pageBox cf" id="shellPage">
+                            </tbody>
+                        </table>
+                        <div class="pageBox cf" id="shellPage">
+                        </div>
                     </div>
-                </div>
-                <!--<div id="divData" class="updateTable">
+                    <!--<div id="divData" class="updateTable">
                     <table cellpadding="0" cellspacing="0">
                         <thead>
                         <tr>
@@ -119,10 +123,10 @@
                     <div class="pageBox cf" id="shellPage">
                     </div>
                 </div>-->
+                </div>
             </div>
         </div>
     </div>
-</div>
 
 
 </body>
@@ -146,7 +150,7 @@
         $.ajax({
             type: "get",
             url: "/book/queryIndexList",
-            data: {'bookId': bookId, 'curr': curr, 'limit': limit, 'orderBy': 'index_num desc'},
+            data: { 'bookId': bookId, 'curr': curr, 'limit': limit, 'orderBy': 'index_num desc' },
             dataType: "json",
             success: function (data) {
                 if (data.code == 200) {
@@ -168,15 +172,15 @@
 
 
                                 "                            <td class=\"goread\">\n" +
-                                "                                " + new Date(Date.parse(book.updateTime)).Format("yyyy-MM-dd hh:mm") + "<br/>更新\n" +
+                                "                                " + new Date(Date.parse(book.updateTime)).Format("yyyy-MM-dd hh:mm") + "<br/>Update\n" +
                                 "                            </td>\n" +
 
                                 "                            <td class=\"goread\" valsc=\"291|2037554|1\">"
-                                + (book.isVip == 1 ? '收费' : '免费') + "</td>\n" +
+                                + (book.isVip == 1 ? 'Charge' : 'Free') + "</td>\n" +
 
                                 " <td class=\"goread\" id='opt" + book.id + "'>" +
-                                "<a  class='redBtn' href='javascript:updateIndex(\"" + book.id + "\"," + book.isVip + ")'>修改  </a><br/>" +
-                                "<a  href='javascript:deleteIndex(\"" + book.id + "\")'>删除  </a><br/>" +
+                                "<a  class='redBtn' href='javascript:updateIndex(\"" + book.id + "\"," + book.isVip + ")'>Edit  </a><br/>" +
+                                "<a  href='javascript:deleteIndex(\"" + book.id + "\")'>Delete  </a><br/>" +
                                 "</td>                     </tr>");
                         }
                         $("#bookList").html(bookListHtml);
@@ -221,7 +225,7 @@
 
             },
             error: function () {
-                layer.alert('网络异常');
+                layer.alert('Network Exception');
             }
         })
 
@@ -281,7 +285,7 @@
 
                         },
                         error: function () {
-                            layer.alert('网络异常');
+                            layer.alert('Network Exception');
                         }
                     })
 
@@ -293,14 +297,14 @@
 
     function deleteIndex(indexId) {
 
-        layer.confirm('确认要删除吗？删除后数据无法找回！', {
-            btn: ['确定', '取消']//按钮
+        layer.confirm('Are you sure you want to delete? The data cannot be recovered after deletion!', {
+            btn: ['Confirm', 'Cancel']//按钮
         }, function (index) {
 
             layer.close(index);
             $.ajax({
                 type: "delete",
-                url: "/author/deleteIndex/"+indexId,
+                url: "/author/deleteIndex/" + indexId,
                 data: {},
                 dataType: "json",
                 success: function (data) {
@@ -319,7 +323,7 @@
 
                 },
                 error: function () {
-                    layer.alert('网络异常');
+                    layer.alert('Network Exception');
                 }
             })
         });
@@ -327,4 +331,5 @@
 
     }
 </script>
+
 </html>

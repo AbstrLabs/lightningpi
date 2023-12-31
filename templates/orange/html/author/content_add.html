@@ -1,71 +1,77 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
+
 <head>
+
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-        <title>作家管理系统-小说精品屋</title>
-        <link rel="stylesheet" href="/css/base.css?v=1"/>
-        <link rel="stylesheet" href="/css/user.css"/>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <title>Author Management System</title>
+        <link rel="stylesheet" href="/css/base.css?v=1" />
+        <link rel="stylesheet" href="/css/user.css" />
     </head>
 </head>
+
 <body class="">
 
-<div class="header">
-    <div class="mainNav" id="mainNav">
-        <div class="box_center cf"
-             style="text-align: center;height: 44px;line-height: 48px;color: #fff;font-size: 16px;">
+    <div class="header">
+        <div class="mainNav" id="mainNav">
+            <div class="box_center cf"
+                style="text-align: center;height: 44px;line-height: 48px;color: #fff;font-size: 16px;">
 
-            小说精品屋作家管理
+                Author Management
 
+            </div>
         </div>
     </div>
-</div>
 
-<div class="main box_center cf">
-    <div class="userBox cf">
-        <div class="my_l">
+    <div class="main box_center cf">
+        <div class="userBox cf">
+            <div class="my_l">
 
-            <ul class="log_list">
-                <li><a class="link_4 on" href="/author/index.html">小说管理</a></li>
-                <li><a class="link_2 " href="/author/author_income_detail.html">稿费收入</a></li>
-                <!--<li><a class="link_1 " href="/user/userinfo.html">批量小说爬取</a></li>
+                <ul class="log_list">
+                    <li><a class="link_4 on" href="/author/index.html">Management</a></li>
+                    <li><a class="link_2 " href="/author/author_income_detail.html">Manuscript Fee</a></li>
+                    <!--<li><a class="link_1 " href="/user/userinfo.html">批量小说爬取</a></li>
 <li><a class="link_4 " href="/user/favorites.html">单本小说爬取</a></li>-->
-            </ul>
+                </ul>
 
-        </div>
-        <div class="my_r">
-            <div class="my_bookshelf">
+            </div>
+            <div class="my_r">
+                <div class="my_bookshelf">
 
-                <div class="userBox cf">
-                    <form method="post" action="./register.html" id="form2">
-                        <div class="user_l">
-                            <div></div>
-                            <h3>小说章节内容填写</h3>
-                            <ul class="log_list">
-                                <li><span id="LabErr"></span></li>
-                                <b>章节名：</b>
-                                <li><input type="text" id="bookIndex" name="bookIndex" class="s_input" ></li>
-                                <b>章节内容：</b><li id="contentLi">
-                                <textarea name="bookContent" rows="30" cols="80" id="bookContent"
-                                          class="textarea"></textarea></li><br/>
+                    <div class="userBox cf">
+                        <form method="post" action="./register.html" id="form2">
+                            <div class="user_l">
+                                <div></div>
+                                <h3>New Chapter</h3>
+                                <ul class="log_list">
+                                    <li><span id="LabErr"></span></li>
+                                    <b>Title: </b>
+                                    <li><input type="text" id="bookIndex" name="bookIndex" class="s_input"></li>
+                                    <b>Content: </b>
+                                    <li id="contentLi">
+                                        <textarea name="bookContent" rows="30" cols="80" id="bookContent"
+                                            class="textarea"></textarea>
+                                    </li><br />
 
-                                <b>是否收费：</b>
-                                <li><input type="radio" name="isVip" value="0" checked  >免费
-                                 <input type="radio" name="isVip" value="1"   >收费</li>
+                                    <b>Free Or Charge</b>
+                                    <li><input type="radio" name="isVip" value="0" checked>Free
+                                        <input type="radio" name="isVip" value="1">Charge
+                                    </li>
 
 
-                                <li style="margin-top: 10px"><input type="button" onclick="addBookContent()" name="btnRegister" value="提交"
-                                           id="btnRegister" class="btn_red">
+                                    <li style="margin-top: 10px"><input type="button" onclick="addBookContent()"
+                                            name="btnRegister" value="Submit" id="btnRegister" class="btn_red">
 
 
-                                </li>
-                            </ul>
-                        </div>
-                    </form>
-                </div>
-                <!--<div id="divData" class="updateTable">
+                                    </li>
+                                </ul>
+                            </div>
+                        </form>
+                    </div>
+                    <!--<div id="divData" class="updateTable">
                     <table cellpadding="0" cellspacing="0">
                         <thead>
                         <tr>
@@ -96,10 +102,10 @@
                     <div class="pageBox cf" id="shellPage">
                     </div>
                 </div>-->
+                </div>
             </div>
         </div>
     </div>
-</div>
 
 
 </body>
@@ -115,7 +121,7 @@
     var lock = false;
     function addBookContent() {
 
-        if(lock){
+        if (lock) {
             return;
         }
         lock = true;
@@ -125,15 +131,15 @@
 
 
         var indexName = $("#bookIndex").val();
-        if(!indexName){
-            $("#LabErr").html("章节名不能为空！");
+        if (!indexName) {
+            $("#LabErr").html("Chapter title cannot be empty!");
             lock = false;
             return;
         }
 
         var content = $("#bookContent").val();
-        if(!content){
-            $("#LabErr").html("章节内容不能为空！");
+        if (!content) {
+            $("#LabErr").html("Chapter content cannot be empty!");
             lock = false;
             return;
         }
@@ -147,12 +153,12 @@
         $.ajax({
             type: "POST",
             url: "/author/addBookContent",
-            data: {'bookId':bookId,'indexName':indexName,'content':content,'isVip':isVip},
+            data: { 'bookId': bookId, 'indexName': indexName, 'content': content, 'isVip': isVip },
             dataType: "json",
             success: function (data) {
                 if (data.code == 200) {
 
-                    window.location.href = '/author/index_list.html?bookId='+bookId;
+                    window.location.href = '/author/index_list.html?bookId=' + bookId;
 
 
                 } else {
@@ -163,11 +169,12 @@
             },
             error: function () {
                 lock = false;
-                layer.alert('网络异常');
+                layer.alert('Network Exception');
             }
         })
 
     }
 
 </script>
+
 </html>

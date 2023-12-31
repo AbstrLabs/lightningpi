@@ -1,74 +1,82 @@
-
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
+
 <head>
+
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-        <title>作家管理系统-小说精品屋</title>
-        <link rel="stylesheet" href="/css/base.css?v=1"/>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <title>Author Management System</title>
+        <link rel="stylesheet" href="/css/base.css?v=1" />
         <link rel="stylesheet" href="/css/user.css" />
     </head>
 </head>
+
 <body class="">
 
-<div class="header">
-    <div class="mainNav" id="mainNav">
-        <div class="box_center cf" style="text-align: center;height: 44px;line-height: 48px;color: #fff;font-size: 16px;">
+    <div class="header">
+        <div class="mainNav" id="mainNav">
+            <div class="box_center cf"
+                style="text-align: center;height: 44px;line-height: 48px;color: #fff;font-size: 16px;">
 
-            小说精品屋作家管理
+                Author Management
 
+            </div>
         </div>
     </div>
-</div>
 
-<div class="main box_center cf">
-    <div class="userBox cf">
-        <div class="my_l">
+    <div class="main box_center cf">
+        <div class="userBox cf">
+            <div class="my_l">
 
-            <ul class="log_list">
-                <li><a class="link_4" href="/author/index.html">小说管理</a></li>
-                <li><a class="link_2 on" href="/author/author_income_detail.html">稿费收入</a></li>
-                <!-- <li><a class="link_1 " href="/user/userinfo.html">批量小说爬取</a></li>
+                <ul class="log_list">
+                    <li><a class="link_4" href="/author/index.html">Management</a></li>
+                    <li><a class="link_2 on" href="/author/author_income_detail.html">Manuscript Fee</a></li>
+                    <!-- <li><a class="link_1 " href="/user/userinfo.html">批量小说爬取</a></li>
                  <li><a class="link_4 " href="/user/favorites.html">单本小说爬取</a></li>-->
-            </ul>
+                </ul>
 
-        </div>
-        <div class="my_r">
-            <div class="my_bookshelf">
-                <div class="title cf">
-                    <h2 class="fl ml10"><a href="/author/author_income_detail.html">订阅明细</a></h2><i class="fl ml20 mr20 font16">|</i><h2 class="fl"><a href="/author/author_income.html" class="red">稿费汇总</a></h2>
-                </div>
-
-                <div id="divData" class="updateTable">
-                    <table cellpadding="0" cellspacing="0">
-                        <thead>
-                        <tr>
-                            <th class="goread">
-                                月份
-                            </th>
-                            <th class="goread">
-                                税前收入
-                            </th>
-                            <th class="goread">
-                                税后收入
-                            </th>
-                            <th class="goread">
-                                支付状态
-                            </th>
-                        </tr>
-
-                        </thead>
-                        <tbody id="bookList">
-
-
-
-                        </tbody>
-                    </table>
-                    <div class="pageBox cf" id="shellPage">
+            </div>
+            <div class="my_r">
+                <div class="my_bookshelf">
+                    <div class="title cf">
+                        <h2 class="fl ml10">
+                            <a href="/author/author_income_detail.html">Subscription Details</a>
+                        </h2>
+                        <i class="fl ml20 mr20 font16">|</i>
+                        <h2 class="fl"><a href="/author/author_income.html" class="red">Total Manuscript Fee</a></h2>
                     </div>
-                </div>
-                <!--<div id="divData" class="updateTable">
+
+                    <div id="divData" class="updateTable">
+                        <table cellpadding="0" cellspacing="0">
+                            <thead>
+                                <tr>
+                                    <th class="goread">
+                                        Month
+                                    </th>
+                                    <th class="goread">
+                                        Pre-tax income
+                                    </th>
+                                    <th class="goread">
+                                        After-tax income
+                                    </th>
+                                    <th class="goread">
+                                        Payment Status
+                                    </th>
+                                </tr>
+
+                            </thead>
+                            <tbody id="bookList">
+
+
+
+                            </tbody>
+                        </table>
+                        <div class="pageBox cf" id="shellPage">
+                        </div>
+                    </div>
+                    <!--<div id="divData" class="updateTable">
                     <table cellpadding="0" cellspacing="0">
                         <thead>
                         <tr>
@@ -99,10 +107,10 @@
                     <div class="pageBox cf" id="shellPage">
                     </div>
                 </div>-->
+                </div>
             </div>
         </div>
     </div>
-</div>
 
 
 </body>
@@ -120,24 +128,24 @@
         $.ajax({
             type: "get",
             url: "/author/listIncomeMonthByPage",
-            data: {'curr':curr,'limit':limit},
+            data: { 'curr': curr, 'limit': limit },
             dataType: "json",
             success: function (data) {
                 if (data.code == 200) {
                     var bookList = data.data.list;
                     if (bookList.length > 0) {
                         var bookListHtml = "";
-                        for(var i=0;i<bookList.length;i++){
+                        for (var i = 0; i < bookList.length; i++) {
                             var book = bookList[i];
-                            bookListHtml+=(" <tr class=\"book_list\" >\n" +
+                            bookListHtml += (" <tr class=\"book_list\" >\n" +
                                 "                            <td class=\"goread\">\n" +
-                                "                                "+book.incomeMonth+"</td>\n" +
+                                "                                " + book.incomeMonth + "</td>\n" +
                                 "                            <td class=\"goread\" >"
-                                +book.preTaxIncome/100+"</td>\n" +
+                                + book.preTaxIncome / 100 + "</td>\n" +
                                 "                            <td class=\"goread\">\n" +
-                                "                                "+book.afterTaxIncome/100+"\n" +
+                                "                                " + book.afterTaxIncome / 100 + "\n" +
                                 "                            </td>\n" +
-                                "                            <td class=\"goread\">"+(book.payStatus == 1 ? '已支付' : '待支付')+
+                                "                            <td class=\"goread\">" + (book.payStatus == 1 ? '已支付' : '待支付') +
                                 "                            </td>\n" +
 
                                 " </tr>");
@@ -178,25 +186,25 @@
                     //未登录
                     location.href = '/user/login.html?originUrl=' + decodeURIComponent(location.href);
 
-                }else {
+                } else {
                     layer.alert(data.msg);
                 }
 
             },
             error: function () {
-                layer.alert('网络异常');
+                layer.alert('Network Exception');
             }
         })
 
     }
 
 
-    function updateBookStatus(bookId,status) {
+    function updateBookStatus(bookId, status) {
 
         $.ajax({
             type: "POST",
             url: "/author/updateBookStatus",
-            data: {'bookId':bookId,'status':status==0?1:0},
+            data: { 'bookId': bookId, 'status': status == 0 ? 1 : 0 },
             dataType: "json",
             success: function (data) {
                 if (data.code == 200) {
@@ -208,13 +216,13 @@
                     //未登录
                     location.href = '/user/login.html?originUrl=' + decodeURIComponent(location.href);
 
-                }else {
+                } else {
                     layer.alert(data.msg);
                 }
 
             },
             error: function () {
-                layer.alert('网络异常');
+                layer.alert('Network Exception');
             }
         })
 
@@ -224,4 +232,5 @@
 
     }
 </script>
+
 </html>

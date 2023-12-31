@@ -1,93 +1,112 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html
+    PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
+
 <head>
+
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-        <title>作家管理系统-小说精品屋</title>
-        <link rel="stylesheet" href="/css/base.css?v=1"/>
-        <link rel="stylesheet" href="/css/user.css"/>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+        <title>Author Management System</title>
+        <link rel="stylesheet" href="/css/base.css?v=1" />
+        <link rel="stylesheet" href="/css/user.css" />
         <style type="text/css">
-            .opacity{-khtml-opacity:0.0;-moz-opacity:0.0;filter:alpha(opacity=0);filter:"alpha(opacity=0)";opacity:0.0; filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0);/*兼容ie8及以下*/}
+            .opacity {
+                -khtml-opacity: 0.0;
+                -moz-opacity: 0.0;
+                filter: alpha(opacity=0);
+                filter: "alpha(opacity=0)";
+                opacity: 0.0;
+                filter: progid:DXImageTransform.Microsoft.Alpha(opacity=0);
+                /*兼容ie8及以下*/
+            }
         </style>
     </head>
 </head>
+
 <body class="">
 
-<div class="header">
-    <div class="mainNav" id="mainNav">
-        <div class="box_center cf"
-             style="text-align: center;height: 44px;line-height: 48px;color: #fff;font-size: 16px;">
+    <div class="header">
+        <div class="mainNav" id="mainNav">
+            <div class="box_center cf"
+                style="text-align: center;height: 44px;line-height: 48px;color: #fff;font-size: 16px;">
 
-            小说精品屋作家管理
+                Author Management
 
+            </div>
         </div>
     </div>
-</div>
 
-<div class="main box_center cf">
-    <div class="userBox cf">
-        <div class="my_l">
+    <div class="main box_center cf">
+        <div class="userBox cf">
+            <div class="my_l">
 
-            <ul class="log_list">
-                <li><a class="link_4 on" href="/author/index.html">小说管理</a></li>
-                <li><a class="link_2 " href="/author/author_income_detail.html">稿费收入</a></li>
-                <!--<li><a class="link_1 " href="/user/userinfo.html">批量小说爬取</a></li>
+                <ul class="log_list">
+                    <li><a class="link_4 on" href="/author/index.html">Management</a></li>
+                    <li><a class="link_2 " href="/author/author_income_detail.html">Manuscript Fee</a></li>
+                    <!--<li><a class="link_1 " href="/user/userinfo.html">批量小说爬取</a></li>
 <li><a class="link_4 " href="/user/favorites.html">单本小说爬取</a></li>-->
-            </ul>
+                </ul>
 
-        </div>
-        <div class="my_r">
-            <div class="my_bookshelf">
+            </div>
+            <div class="my_r">
+                <div class="my_bookshelf">
 
-                <div class="userBox cf">
-                    <form method="post" action="./register.html" id="form2">
-                        <div class="user_l">
-                            <div></div>
-                            <h3>小说基本信息填写</h3>
-                            <ul class="log_list">
-                                <li><span id="LabErr"></span></li>
-                                <b>作品方向：</b>
-                                <li><select class="s_input" id="workDirection" name="workDirection">
-                                    <option value="0">男频</option>
-                                    <option value="1">女频</option>
-                                </select>
-                                </li>
-                                <b>分类：</b>
-                                <li><select class="s_input" id="catId" name="catId">
-                                    <option value="1">玄幻奇幻</option>
-                                    <option value="2">武侠仙侠</option>
-                                    <option value="3">都市言情</option>
-                                    <option value="4">历史军事</option>
-                                    <option value="5">科幻灵异</option>
-                                    <option value="6">网游竞技</option>
-                                    <option value="7">女生频道</option>
-                                </select></li>
-                                <input type="hidden" id="catName" name="catName" value="玄幻奇幻"/>
-                                <b>小说名：</b>
-                                <li><input type="text" id="bookName" name="bookName" class="s_input" ></li>
-                                <b>小说封面：</b>
-                                <li style="position: relative">
-                                    <input class="opacity" onchange="picChange()"
-                                           type="file" id="file0" name="file"
-                                           title="点击更换图片"
-                                           style="z-index: 100;cursor: pointer;left: 0px; top: 0px; width: 100px; height: 130px; opacity: 0; position: absolute;  "
-                                    />
-                                    <img style="width:100px;height: 130px" id="picImage" src="/images/pic_upload.png" alt="">
-                                    <input type="hidden" id="picUrl" name="picUrl" class="s_input" value="/images/default.gif"></li>
-                                <b>小说介绍：</b>
+                    <div class="userBox cf">
+                        <form method="post" action="./register.html" id="form2">
+                            <div class="user_l">
+                                <div></div>
+                                <h3>Basic Info</h3>
+                                <ul class="log_list">
+                                    <li><span id="LabErr"></span></li>
+                                    <b>Plot: </b>
+                                    <li><select class="s_input" id="workDirection" name="workDirection">
+                                            <option value="0"> For Boys</option>
+                                            <option value="1">For Girls</option>
+                                        </select>
+                                    </li>
+                                    <b>Category: </b>
+                                    <li><select class="s_input" id="catId" name="catId">
+                                            <option value="0">Fantasy</option>
+                                            <option value="1">Magic</option>
+                                            <option value="2">Wuxia</option>
+                                            <option value="3">Werewolf</option>
+                                            <option value="4">Vampire</option>
+                                            <option value="5">Devil</option>
+                                            <option value="6">Alpha</option>
+                                            <option value="7">Romance</option>
+                                            <option value="8">Paranormal</option>
+                                            <option value="9">Military</option>
+                                            <option value="10">Science Fiction</option>
+                                            <option value="11">Online Gaming and Esports</option>
+                                            <option value="12">LGBTQ+</option>
 
-                                <li><textarea name="bookDesc" rows="5" cols="53" id="bookDesc"
-                                              class="textarea"></textarea></li>
+                                        </select></li>
+                                    <input type="hidden" id="catName" name="catName" value="Fantasy" />
+                                    <b>Title: </b>
+                                    <li><input type="text" id="bookName" name="bookName" class="s_input"></li>
+                                    <b>Cover: </b>
+                                    <li style="position: relative">
+                                        <input class="opacity" onchange="picChange()" type="file" id="file0" name="file"
+                                            title="Click to change image"
+                                            style="z-index: 100;cursor: pointer;left: 0px; top: 0px; width: 100px; height: 130px; opacity: 0; position: absolute;  " />
+                                        <img style="width:100px;height: 130px" id="picImage"
+                                            src="/images/pic_upload.png" alt="">
+                                        <input type="hidden" id="picUrl" name="picUrl" class="s_input"
+                                            value="/images/default.gif">
+                                    </li>
+                                    <b>Introduction: </b>
 
-                                <li><input type="button" onclick="addBook()" name="btnRegister" value="提交"
-                                           id="btnRegister" class="btn_red"></li>
-                            </ul>
-                        </div>
-                    </form>
-                </div>
-                <!--<div id="divData" class="updateTable">
+                                    <li><textarea name="bookDesc" rows="5" cols="53" id="bookDesc"
+                                            class="textarea"></textarea></li>
+
+                                    <li><input type="button" onclick="addBook()" name="btnRegister" value="Submit"
+                                            id="btnRegister" class="btn_red"></li>
+                                </ul>
+                            </div>
+                        </form>
+                    </div>
+                    <!--<div id="divData" class="updateTable">
                     <table cellpadding="0" cellspacing="0">
                         <thead>
                         <tr>
@@ -118,10 +137,10 @@
                     <div class="pageBox cf" id="shellPage">
                     </div>
                 </div>-->
+                </div>
             </div>
         </div>
     </div>
-</div>
 
 
 </body>
@@ -138,7 +157,7 @@
         var file = $("#file0").val(); //文件名称
         if (file != "") {
 
-            if(checkPicUpload($("#file0")[0])) {
+            if (checkPicUpload($("#file0")[0])) {
                 $.ajaxFileUpload({
                     url: "/file/picUpload", //用于文件上传的服务器端请求地址
                     secureuri: false, //是否需要安全协议，一般设置为false
@@ -167,7 +186,7 @@
 
     var lock = false;
     function addBook() {
-        if(lock){
+        if (lock) {
             return;
         }
         lock = true;
@@ -175,26 +194,26 @@
 
 
         var bookName = $("#bookName").val();
-        if(!bookName){
+        if (!bookName) {
             $("#LabErr").html("小说名不能为空！");
             lock = false;
             return;
         }
-        if(bookName.length > 20){
+        if (bookName.length > 20) {
             $("#LabErr").html("小说名太长！");
             lock = false;
             return;
         }
 
         var picUrl = $("#picUrl").val();
-        if(!picUrl){
+        if (!picUrl) {
             $("#LabErr").html("封面图片不能为空！");
             lock = false;
             return;
         }
 
         var bookDesc = $("#bookDesc").val();
-        if(!bookDesc){
+        if (!bookDesc) {
             $("#LabErr").html("简介不能为空！");
             lock = false;
             return;
@@ -204,9 +223,11 @@
         $.ajax({
             type: "POST",
             url: "/author/addBook",
-            data: {'workDirection': $("#workDirection").val(),
-            'catId':$("#catId").val(),'catName':$("#catId").find("option[value="+$("#catId").val()+"]").html(),
-            'bookName':bookName,'picUrl':picUrl,'bookDesc':bookDesc},
+            data: {
+                'workDirection': $("#workDirection").val(),
+                'catId': $("#catId").val(), 'catName': $("#catId").find("option[value=" + $("#catId").val() + "]").html(),
+                'bookName': bookName, 'picUrl': picUrl, 'bookDesc': bookDesc
+            },
             dataType: "json",
             success: function (data) {
                 if (data.code == 200) {
@@ -222,11 +243,12 @@
             },
             error: function () {
                 lock = false;
-                layer.alert('网络异常');
+                layer.alert('Network Exception');
             }
         })
 
     }
 
 </script>
+
 </html>
