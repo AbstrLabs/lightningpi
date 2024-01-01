@@ -45,7 +45,7 @@
                     <li><a class="link_4 on" href="/author/index.html">Management</a></li>
                     <li><a class="link_2 " href="/author/author_income_detail.html">Manuscript Fee</a></li>
                     <!--<li><a class="link_1 " href="/user/userinfo.html">批量小说爬取</a></li>
-<li><a class="link_4 " href="/user/favorites.html">单本小说爬取</a></li>-->
+                    <li><a class="link_4 " href="/user/favorites.html">单本小说爬取</a></li>-->
                 </ul>
 
             </div>
@@ -61,24 +61,24 @@
                                     <li><span id="LabErr"></span></li>
                                     <b>Plot: </b>
                                     <li><select class="s_input" id="workDirection" name="workDirection">
-                                            <option value="0"> For Boys</option>
-                                            <option value="1">For Girls</option>
+                                            <option value="0">For Male Direction</option>
+                                            <option value="1">For Female Direction</option>
                                         </select>
                                     </li>
-                                    <b>Category: </b>
+                                    <b>Genres: </b>
                                     <li><select class="s_input" id="catId" name="catId">
-                                            <option value="0">Fantasy</option>
-                                            <option value="1">Magic</option>
-                                            <option value="2">Wuxia</option>
-                                            <option value="3">Werewolf</option>
-                                            <option value="4">Vampire</option>
-                                            <option value="5">Devil</option>
-                                            <option value="6">Alpha</option>
-                                            <option value="7">Romance</option>
+                                            <option value="0">Action</option>
+                                            <option value="1">Adventure</option>
+                                            <option value="2">Contemporary</option>
+                                            <option value="3">Drama</option>
+                                            <option value="4">Esports</option>
+                                            <option value="5">Fantasy</option>
+                                            <option value="6">Military</option>
+                                            <option value="7">Magic</option>
                                             <option value="8">Paranormal</option>
-                                            <option value="9">Military</option>
-                                            <option value="10">Science Fiction</option>
-                                            <option value="11">Online Gaming and Esports</option>
+                                            <option value="9">Romance</option>
+                                            <option value="10">Sci-Fiction</option>
+                                            <option value="11">Wuxia</option>
                                             <option value="12">LGBTQ+</option>
 
                                         </select></li>
@@ -177,7 +177,7 @@
                 });
             }
         } else {
-            alert("请选择上传文件！");
+            alert("Please choose the upload file!");
         }
 
 
@@ -195,26 +195,26 @@
 
         var bookName = $("#bookName").val();
         if (!bookName) {
-            $("#LabErr").html("小说名不能为空！");
+            $("#LabErr").html("Novel title cannot be empty!");
             lock = false;
             return;
         }
         if (bookName.length > 20) {
-            $("#LabErr").html("小说名太长！");
+            $("#LabErr").html("Novel title is too long!");
             lock = false;
             return;
         }
 
         var picUrl = $("#picUrl").val();
         if (!picUrl) {
-            $("#LabErr").html("封面图片不能为空！");
+            $("#LabErr").html("Cover image cannot be empty!");
             lock = false;
             return;
         }
 
         var bookDesc = $("#bookDesc").val();
         if (!bookDesc) {
-            $("#LabErr").html("简介不能为空！");
+            $("#LabErr").html("Introduction cannot be empty!");
             lock = false;
             return;
         }

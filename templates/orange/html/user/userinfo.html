@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <head th:replace="common/header :: common_head(~{::title},~{},~{::link},~{})">
-    <title th:text="'个人中心_'+${application.website.name}"></title>
+    <title th:text="'Personal Center '+${application.website.name}"></title>
     <link rel="stylesheet" href="/css/user.css" />
 </head>
 
@@ -16,11 +16,11 @@
             <div class="my_l">
 
                 <ul class="log_list">
-                    <li><a class="link_1 on" href="/user/userinfo.html">个人中心</a></li>
-                    <li><a class="link_4" href="/user/favorites.html">我的书架</a></li>
-                    <li><a class="link_6" href="/user/comment.html">我的书评</a></li>
-                    <li><a class="link_7 " href="/user/feedback_list.html">我的反馈</a></li>
-                    <li><a class="link_8 " href="/user/setup.html">账号设置</a></li>
+                    <li><a class="link_1 " href="/user/userinfo.html">Personal Center</a></li>
+                    <li><a class="link_4" href="/user/favorites.html">My Bookshelf</a></li>
+                    <li><a class="link_6 on" href="/user/comment.html">My Book Reviews</a></li>
+                    <li><a class="link_7 " href="/user/feedback_list.html">My Feedback</a></li>
+                    <li><a class="link_8 " href="/user/setup.html">Account Settings</a></li>
                 </ul>
 
             </div>
@@ -31,9 +31,10 @@
                         <p class="my_name" id="my_name">
                         </p>
                         <ul class="my_list">
-                            <li class="my_gold"><i>账户余额：</i><em class="red" id="accountBalance">0</em>屋币
-                                <!--<em class="red">+</em><em class="red">0</em>代金券--><a href="/pay/index.html"
-                                    class="btn_link">立即充值</a>
+                            <li class="my_gold"><i>Account Balance: </i><em class="red" id="accountBalance">0</em>
+                                PI Coin
+                                <!--<em class="red">+</em><em class="red">0</em>Voucher--><a href="/pay/index.html"
+                                    class="btn_link">Recharge Now</a>
                             </li>
                             <li class="my_baonian"></li>
 
@@ -43,27 +44,27 @@
                 <div class="my_bookshelf">
                     <div class="title cf">
                         <h4 class="fl">
-                            我的书架</h4>
-                        <a href="/user/favorites.html" class="fr">全部收藏 &gt;</a>
+                            My Bookshelf</h4>
+                        <a href="/user/favorites.html" class="fr">All Collections &gt;</a>
                     </div>
                     <div class="updateTable">
                         <table cellpadding="0" cellspacing="0">
                             <thead>
                                 <tr>
                                     <th class="style">
-                                        类别
+                                        Genres
                                     </th>
                                     <th class="name">
-                                        书名
+                                        Title
                                     </th>
                                     <th class="chapter">
-                                        最新章节
+                                        Latest Chapter
                                     </th>
                                     <th class="time">
-                                        更新时间
+                                        Latest Chapter
                                     </th>
                                     <th class="goread">
-                                        书签
+                                        Bookmarks
                                     </th>
                                 </tr>
                             </thead>
@@ -143,7 +144,7 @@
                                 "                                " + book.lastIndexUpdateTime + "\n" +
                                 "                            </td>\n" +
                                 "                            <td class=\"goread\">\n" +
-                                "<a href='/book/" + book.bookId + "/" + book.preContentId + ".html'>继续阅读</a>" +
+                                "<a href='/book/" + book.bookId + "/" + book.preContentId + ".html'>Continue Reading</a>" +
                                 "                            </td>\n" +
                                 "                        </tr>");
                         }

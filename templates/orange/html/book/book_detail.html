@@ -7,7 +7,7 @@
         th:utext="${book.bookName}+'_'+${book.authorName}+'_'+${book.bookName}+'TXT Download '+${book.bookName}+'No Pop-ups '+${application.website.name}">
     </title>
     <meta name="keywords"
-        th:content="${book.bookName}+'Official Premiere '+${book.bookName}+'Novel, '+${book.bookName}+'Latest Chapter '+${book.bookName}+'TXT Download, '+${book.bookName}+'No Pop-ups, '+${book.bookName}+'Offline Completion.'" />
+        th:content="${book.bookName}+'Official Premiere '+${book.bookName}+' Novel, '+${book.bookName}+'Latest Chapter '+${book.bookName}+'TXT Download, '+${book.bookName}+'No Pop-ups, '+${book.bookName}+'Offline Completion.'" />
     <meta name="description"
         th:content="${book.bookName}+','+${book.bookName}+'Novel Reading, '+${book.bookName}+'from author '+${book.authorName}+'create, '+${application.website.name}+'provide, '+${book.bookName}+'first release of the Latest Chapter and TXT download, '+${book.bookName}+'latest updated chapters, all the excitement is here '+${application.website.name}+'.'" />
     <link rel="stylesheet" href="/css/main.css" />
@@ -40,7 +40,7 @@
                         <!--<i class="vip_b">VIP</i>--><a class="author" th:utext="${book.authorName}"></a>
                     </div>
                     <ul class="list">
-                        <li><span class="item">Category: <em th:text="${book.catName}"></em></span>
+                        <li><span class="item">Genres: <em th:text="${book.catName}"></em></span>
                             <span class="item" th:switch="${book.bookStatus}">Status: <em th:case="'0'">Ongoing</em><em
                                     th:case="*">Complete</em></span>
                             <span class="item">Total Click Count: <em id="cTotal"
@@ -356,7 +356,7 @@
                                 commentListHtml += ("<div class=\"comment_list cf\">" +
                                     "<div class=\"user_heads fl\" vals=\"389\">" +
                                     "<img src=\"" + (comment.createUserPhoto ? comment.createUserPhoto : '/images/man.png') + "\" class=\"user_head\" alt=\"\">" +
-                                    "<span class=\"user_level1\" style=\"display: none;\">见习</span></div>" +
+                                    "<span class=\"user_level1\" style=\"display: none;\">Intern</span></div>" +
                                     "<ul class=\"pl_bar fr\">\t\t\t<li class=\"name\">" + (comment.createUserName) + "</li><li class=\"dec\">" +
                                     comment.commentContent +
                                     "</li><li class=\"other cf\">" +

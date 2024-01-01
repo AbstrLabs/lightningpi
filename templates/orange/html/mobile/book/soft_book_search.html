@@ -2,6 +2,7 @@
 <html lang="en">
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
@@ -9,16 +10,13 @@
 
     <meta name="keywords" th:content="${application.seoConfig.page['soft-search.keyword']}">
 
-    <meta name="description"
-          th:content="${application.seoConfig.page['soft-search.description']}">
+    <meta name="description" th:content="${application.seoConfig.page['soft-search.description']}">
 
     <div th:include="common/css :: css"></div>
 
     </div>
 
     <style type="text/css">
-
-
         .line-limit-length {
 
             overflow: hidden;
@@ -40,7 +38,8 @@
             color: #333;
         }
 
-        div, p {
+        div,
+        p {
             wrap-work: break-word;
             word-break: break-all;
             word-wrap: break-word;
@@ -61,127 +60,128 @@
         }
     </style>
 </head>
+
 <body>
 
 
-<input type="hidden" id="limit" th:value="${limit}"/>
-<input type="hidden" id="curr" th:value="${curr}"/>
-<input type="hidden" id="total" th:value="${total}"/>
-<input type="hidden" id="ids" th:value="${ids}"/>
-<input type="hidden" id="keyword" th:value="${keyword}"/>
-<input type="hidden" id="softTag" th:value="${softTag}"/>
-<input type="hidden" id="sortBy" th:value="${sortBy}"/>
-<input type="hidden" id="sort" th:value="${sort}"/>
-<input type="hidden" id="bookStatus" th:value="${bookStatus}"/>
-<input type="hidden" id="softCat" th:value="${softCat}"/>
+    <input type="hidden" id="limit" th:value="${limit}" />
+    <input type="hidden" id="curr" th:value="${curr}" />
+    <input type="hidden" id="total" th:value="${total}" />
+    <input type="hidden" id="ids" th:value="${ids}" />
+    <input type="hidden" id="keyword" th:value="${keyword}" />
+    <input type="hidden" id="softTag" th:value="${softTag}" />
+    <input type="hidden" id="sortBy" th:value="${sortBy}" />
+    <input type="hidden" id="sort" th:value="${sort}" />
+    <input type="hidden" id="bookStatus" th:value="${bookStatus}" />
+    <input type="hidden" id="softCat" th:value="${softCat}" />
 
-<ul class="layui-nav" lay-filter="" style="padding:0 20px;text-align: center">
-    <li id="menunew" class="layui-nav-item"><a href="/book/searchSoftBook.html">最新</a></li>
-    <li id="menu21" class="layui-nav-item"><a href="/book/searchSoftBook.html?softCat=21">魔幻</a></li>
-    <li id="menu22" class="layui-nav-item"><a href="/book/searchSoftBook.html?softCat=22">玄幻</a></li>
-    <li id="menu23" class="layui-nav-item"><a href="/book/searchSoftBook.html?softCat=23">古风</a></li>
-    <li id="menu24" class="layui-nav-item"><a href="/book/searchSoftBook.html?softCat=24">科幻</a></li>
-    <li id="menu25" class="layui-nav-item"><a href="/book/searchSoftBook.html?softCat=25">校园</a></li>
-    <li id="menu26" class="layui-nav-item"><a href="/book/searchSoftBook.html?softCat=26">都市</a></li>
-    <li id="menu27" class="layui-nav-item"><a href="/book/searchSoftBook.html?softCat=27">游戏</a></li>
-    <li id="menu28" class="layui-nav-item"><a href="/book/searchSoftBook.html?softCat=28">同人</a></li>
-    <li id="menu29" class="layui-nav-item"><a href="/book/searchSoftBook.html?softCat=29">悬疑</a></li>
-    <li id="menu0" class="layui-nav-item"><a href="/book/searchSoftBook.html?softCat=0">动漫</a></li>
-    <li id="menucomplete" class="layui-nav-item"><a>完本</a>
-        <dl class="layui-nav-child"> <!-- 二级菜单 -->
-            <dd><a href="/book/searchSoftBook.html?bookStatus=已完成">全部</a></dd>
-            <dd><a href="/book/searchSoftBook.html?bookStatus=已完成&softCat=21">魔幻</a></dd>
-            <dd><a href="/book/searchSoftBook.html?bookStatus=已完成&softCat=22">玄幻</a></dd>
-            <dd><a href="/book/searchSoftBook.html?bookStatus=已完成&softCat=23">古风</a></dd>
-            <dd><a href="/book/searchSoftBook.html?bookStatus=已完成&softCat=24">科幻</a></dd>
-            <dd><a href="/book/searchSoftBook.html?bookStatus=已完成&softCat=25">校园</a></dd>
-            <dd><a href="/book/searchSoftBook.html?bookStatus=已完成&softCat=26">都市</a></dd>
-            <dd><a href="/book/searchSoftBook.html?bookStatus=已完成&softCat=27">游戏</a></dd>
-            <dd><a href="/book/searchSoftBook.html?bookStatus=已完成&softCat=28">同人</a></dd>
-            <dd><a href="/book/searchSoftBook.html?bookStatus=已完成&softCat=29">悬疑</a></dd>
-            <dd><a href="/book/searchSoftBook.html?bookStatus=已完成&softCat=0">动漫</a></dd>
-        </dl>
-    </li>
-    <li id="menuhot" class="layui-nav-item"><a>排行</a>
-        <dl class="layui-nav-child"> <!-- 二级菜单 -->
-            <dd><a href="/book/searchSoftBook.html?sortBy=score">全部</a></dd>
-            <dd><a href="/book/searchSoftBook.html?sortBy=score&softCat=21">魔幻</a></dd>
-            <dd><a href="/book/searchSoftBook.html?sortBy=score&softCat=22">玄幻</a></dd>
-            <dd><a href="/book/searchSoftBook.html?sortBy=score&softCat=23">古风</a></dd>
-            <dd><a href="/book/searchSoftBook.html?sortBy=score&softCat=24">科幻</a></dd>
-            <dd><a href="/book/searchSoftBook.html?sortBy=score&softCat=25">校园</a></dd>
-            <dd><a href="/book/searchSoftBook.html?sortBy=score&softCat=26">都市</a></dd>
-            <dd><a href="/book/searchSoftBook.html?sortBy=score&softCat=27">游戏</a></dd>
-            <dd><a href="/book/searchSoftBook.html?sortBy=score&softCat=28">同人</a></dd>
-            <dd><a href="/book/searchSoftBook.html?sortBy=score&softCat=29">悬疑</a></dd>
-            <dd><a href="/book/searchSoftBook.html?sortBy=score&softCat=0">动漫</a></dd>
-        </dl>
-    </li>
+    <ul class="layui-nav" lay-filter="" style="padding:0 20px;text-align: center">
+        <li id="menunew" class="layui-nav-item"><a href="/book/searchSoftBook.html">最新</a></li>
+        <li id="menu21" class="layui-nav-item"><a href="/book/searchSoftBook.html?softCat=21">魔幻</a></li>
+        <li id="menu22" class="layui-nav-item"><a href="/book/searchSoftBook.html?softCat=22">玄幻</a></li>
+        <li id="menu23" class="layui-nav-item"><a href="/book/searchSoftBook.html?softCat=23">古风</a></li>
+        <li id="menu24" class="layui-nav-item"><a href="/book/searchSoftBook.html?softCat=24">科幻</a></li>
+        <li id="menu25" class="layui-nav-item"><a href="/book/searchSoftBook.html?softCat=25">校园</a></li>
+        <li id="menu26" class="layui-nav-item"><a href="/book/searchSoftBook.html?softCat=26">都市</a></li>
+        <li id="menu27" class="layui-nav-item"><a href="/book/searchSoftBook.html?softCat=27">游戏</a></li>
+        <li id="menu28" class="layui-nav-item"><a href="/book/searchSoftBook.html?softCat=28">同人</a></li>
+        <li id="menu29" class="layui-nav-item"><a href="/book/searchSoftBook.html?softCat=29">悬疑</a></li>
+        <li id="menu0" class="layui-nav-item"><a href="/book/searchSoftBook.html?softCat=0">动漫</a></li>
+        <li id="menucomplete" class="layui-nav-item"><a>完本</a>
+            <dl class="layui-nav-child">
+                <!-- 二级菜单 -->
+                <dd><a href="/book/searchSoftBook.html?bookStatus=已完成">全部</a></dd>
+                <dd><a href="/book/searchSoftBook.html?bookStatus=已完成&softCat=21">魔幻</a></dd>
+                <dd><a href="/book/searchSoftBook.html?bookStatus=已完成&softCat=22">玄幻</a></dd>
+                <dd><a href="/book/searchSoftBook.html?bookStatus=已完成&softCat=23">古风</a></dd>
+                <dd><a href="/book/searchSoftBook.html?bookStatus=已完成&softCat=24">科幻</a></dd>
+                <dd><a href="/book/searchSoftBook.html?bookStatus=已完成&softCat=25">校园</a></dd>
+                <dd><a href="/book/searchSoftBook.html?bookStatus=已完成&softCat=26">都市</a></dd>
+                <dd><a href="/book/searchSoftBook.html?bookStatus=已完成&softCat=27">游戏</a></dd>
+                <dd><a href="/book/searchSoftBook.html?bookStatus=已完成&softCat=28">同人</a></dd>
+                <dd><a href="/book/searchSoftBook.html?bookStatus=已完成&softCat=29">悬疑</a></dd>
+                <dd><a href="/book/searchSoftBook.html?bookStatus=已完成&softCat=0">动漫</a></dd>
+            </dl>
+        </li>
+        <li id="menuhot" class="layui-nav-item"><a>排行</a>
+            <dl class="layui-nav-child">
+                <!-- 二级菜单 -->
+                <dd><a href="/book/searchSoftBook.html?sortBy=score">全部</a></dd>
+                <dd><a href="/book/searchSoftBook.html?sortBy=score&softCat=21">魔幻</a></dd>
+                <dd><a href="/book/searchSoftBook.html?sortBy=score&softCat=22">玄幻</a></dd>
+                <dd><a href="/book/searchSoftBook.html?sortBy=score&softCat=23">古风</a></dd>
+                <dd><a href="/book/searchSoftBook.html?sortBy=score&softCat=24">科幻</a></dd>
+                <dd><a href="/book/searchSoftBook.html?sortBy=score&softCat=25">校园</a></dd>
+                <dd><a href="/book/searchSoftBook.html?sortBy=score&softCat=26">都市</a></dd>
+                <dd><a href="/book/searchSoftBook.html?sortBy=score&softCat=27">游戏</a></dd>
+                <dd><a href="/book/searchSoftBook.html?sortBy=score&softCat=28">同人</a></dd>
+                <dd><a href="/book/searchSoftBook.html?sortBy=score&softCat=29">悬疑</a></dd>
+                <dd><a href="/book/searchSoftBook.html?sortBy=score&softCat=0">动漫</a></dd>
+            </dl>
+        </li>
 
-</ul>
-
-
-<div class="layui-container">
-    <div class="layui-row">
-
-        <div class="layui-col-xs10 layui-col-sm10 layui-col-md11 layui-col-lg11" style="padding-top:1%">
-            <input id="title" type="text" name="title" required lay-verify="required" placeholder="请输入书名·作者"
-                   autocomplete="off"
-                   class="layui-input" th:value="${keyword}">
-        </div>
-        <div class="layui-col-xs1" style="padding: 1%">
-            <button onclick="searchBooks()" class="layui-btn" lay-submit lay-filter="formDemo">搜索</button>
-        </div>
-    </div>
-
-</div>
+    </ul>
 
 
-<div th:each="book : ${books}" class="layui-row" style="margin-bottom:10px;padding:10px;background: #f2f2f2">
-    <a th:href="'/book/'+ ${book.id} + '.html'">
-        <div class="layui-col-xs6 layui-col-sm3 layui-col-md2 layui-col-lg2" style="text-align: center"
-             th:switch="${application.noLazy}">
-            <img th:case="'1'" align="center"
-                 th:attr="data-src=${book.picUrl}"/>
-            <img th:case="*" align="center"
-                 class="lazyload" th:attr="data-src=${book.picUrl}"/>
-        </div>
-    </a>
-    <div style="padding: 20px" class="layui-col-xs6 layui-col-sm8 layui-col-md8 layui-col-lg8">
-        <a th:href="'/book/'+ ${book.id} + '.html'">
-            <div class="line-limit-length" style=";color: #4c6978;font-weight: bold;font-size: 15px"
-                 th:text="${book.bookName}"></div>
-        </a>
-        <div style=";color: #4c6978;float: right;"><i style="color: red" th:text="${book.score} + '分'"></i></div>
-        <a th:href="'/book/searchSoftBook.html?keyword='+ ${book.author}">
-            <div style=";color: #4c6978;" class="line-limit-length" th:text="'作者：'+ ${book.author}"></div>
-        </a>
-        <div style="margin-top: 5px;color: #4c6978;" th:text="'类别：'+ ${book.cateName}"></div>
-        <div style="margin-top: 5px;color: #4c6978;" th:text="'状态：'+ ${book.bookStatus}"></div>
-        <div style="margin-top: 5px;color: #4c6978;">更新：<i th:text="${#dates.format(book.updateTime, 'yy-MM-dd')}"></i>
-        </div>
-        <div class="layui-collapse" style="margin-top: 5px;">
-            <div class="layui-colla-item">
-                <h2 style="color: #4c6978;" class="layui-colla-title">简介：</h2>
-                <div style="color: #4c6978;" class="layui-colla-content" th:utext="${book.bookDesc}">
+    <div class="layui-container">
+        <div class="layui-row">
 
-                </div>
+            <div class="layui-col-xs10 layui-col-sm10 layui-col-md11 layui-col-lg11" style="padding-top:1%">
+                <input id="title" type="text" name="title" required lay-verify="required" placeholder="请输入书名·作者"
+                    autocomplete="off" class="layui-input" th:value="${keyword}">
+            </div>
+            <div class="layui-col-xs1" style="padding: 1%">
+                <button onclick="searchBooks()" class="layui-btn" lay-submit lay-filter="formDemo">搜索</button>
             </div>
         </div>
 
+    </div>
+
+
+    <div th:each="book : ${books}" class="layui-row" style="margin-bottom:10px;padding:10px;background: #f2f2f2">
+        <a th:href="'/book/'+ ${book.id} + '.html'">
+            <div class="layui-col-xs6 layui-col-sm3 layui-col-md2 layui-col-lg2" style="text-align: center"
+                th:switch="${application.noLazy}">
+                <img th:case="'1'" align="center" th:attr="data-src=${book.picUrl}" />
+                <img th:case="*" align="center" class="lazyload" th:attr="data-src=${book.picUrl}" />
+            </div>
+        </a>
+        <div style="padding: 20px" class="layui-col-xs6 layui-col-sm8 layui-col-md8 layui-col-lg8">
+            <a th:href="'/book/'+ ${book.id} + '.html'">
+                <div class="line-limit-length" style=";color: #4c6978;font-weight: bold;font-size: 15px"
+                    th:text="${book.bookName}"></div>
+            </a>
+            <div style=";color: #4c6978;float: right;"><i style="color: red" th:text="${book.score} + '分'"></i></div>
+            <a th:href="'/book/searchSoftBook.html?keyword='+ ${book.author}">
+                <div style=";color: #4c6978;" class="line-limit-length" th:text="'作者：'+ ${book.author}"></div>
+            </a>
+            <div style="margin-top: 5px;color: #4c6978;" th:text="'Genres: '+ ${book.cateName}"></div>
+            <div style="margin-top: 5px;color: #4c6978;" th:text="'Status: '+ ${book.bookStatus}"></div>
+            <div style="margin-top: 5px;color: #4c6978;">Update Time: <i
+                    th:text="${#dates.format(book.updateTime, 'yy-MM-dd')}"></i>
+            </div>
+            <div class="layui-collapse" style="margin-top: 5px;">
+                <div class="layui-colla-item">
+                    <h2 style="color: #4c6978;" class="layui-colla-title">Introduction: </h2>
+                    <div style="color: #4c6978;" class="layui-colla-content" th:utext="${book.bookDesc}">
+
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
 
     </div>
 
-</div>
+
+    <div id="books" style="text-align: center"></div>
 
 
-<div id="books" style="text-align: center"></div>
+    <div th:replace="common/soft_footer :: footer">
+    </div>
 
-
-<div th:replace="common/soft_footer :: footer">
-</div>
-
-<a name="buttom"></a>
+    <a name="buttom"></a>
 </body>
 
 <div th:replace="common/js :: js"></div>

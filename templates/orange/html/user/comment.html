@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <head th:replace="common/header :: common_head(~{::title},~{},~{::link},~{})">
-    <title th:text="'我的书评_'+${application.website.name}"></title>
+    <title th:text="'Book Review '+${application.website.name}"></title>
     <link rel="stylesheet" href="/css/user.css" />
 </head>
 
@@ -16,23 +16,23 @@
             <div class="my_l">
 
                 <ul class="log_list">
-                    <li><a class="link_1 " href="/user/userinfo.html">个人中心</a></li>
-                    <li><a class="link_4" href="/user/favorites.html">我的书架</a></li>
-                    <li><a class="link_6 on" href="/user/comment.html">我的书评</a></li>
-                    <li><a class="link_7 " href="/user/feedback_list.html">我的反馈</a></li>
-                    <li><a class="link_8 " href="/user/setup.html">账号设置</a></li>
+                    <li><a class="link_1 " href="/user/userinfo.html">Personal Center</a></li>
+                    <li><a class="link_4" href="/user/favorites.html">My Bookshelf</a></li>
+                    <li><a class="link_6 on" href="/user/comment.html">My Book Reviews</a></li>
+                    <li><a class="link_7 " href="/user/feedback_list.html">My Feedback</a></li>
+                    <li><a class="link_8 " href="/user/setup.html">Account Settings</a></li>
                 </ul>
 
             </div>
             <div class="my_r">
                 <div class="my_bookshelf">
                     <div class="title cf">
-                        <h2 class="fl">我的书评</h2>
+                        <h2 class="fl">My Book Reviews</h2>
                         <div class="fr"></div>
                     </div>
                     <div class="bookComment">
                         <div class="no_contet no_comment" style="display:none">
-                            您还没有发表过评论！
+                            You have not posted any comments yet!
                         </div>
                         <div class="commentBar" id="commentBar">
 
@@ -70,7 +70,7 @@
                                 commentListHtml += ("<div class=\"comment_list cf\">" +
                                     "<div class=\"user_heads fl\" vals=\"389\">" +
                                     "<img src=\"" + (comment.createUserPhoto ? comment.createUserPhoto : '/images/man.png') + "\" class=\"user_head\" alt=\"\">" +
-                                    "<span class=\"user_level1\" style=\"display: none;\">见习</span></div>" +
+                                    "<span class=\"user_level1\" style=\"display: none;\">Intern</span></div>" +
                                     "<ul class=\"pl_bar fr\">\t\t\t<li class=\"name\">" + (comment.createUserName.substr(0, 4) + "****" + comment.createUserName.substr(comment.createUserName.length - 3, 3)) + "</li><li class=\"dec\">" +
                                     comment.commentContent +
                                     "</li><li class=\"other cf\">" +

@@ -6,13 +6,14 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title th:text="${application.website.name}+'列表'"></title>
+    <title th:text="${application.website.name}+' List'"></title>
 
     <meta name="keywords"
-        th:content="${application.website.name}+',精品小说,弹幕网站,弹幕,弹幕小说网站,免费小说,小说阅读,小说排行,轻小说,txt小说下载,电子书下载,动漫轻小说,日本轻小说'">
+        th:content="${application.website.name}+', 
+        High-quality novels, free novels, novel reading, novel rankings, light novels, TXT novel downloads, ebook downloads'">
 
     <meta name="description"
-        th:content="${application.website.name}+'是国内优秀的小说弹幕网站,'+${application.website.name}+'提供海量热门网络小说,日本轻小说,国产轻小说,动漫小说,轻小说在线阅读和TXT小说下载,致力于网络精品小说的收集,智能计算小说评分,打造小说精品排行榜,致力于无广告无弹窗的小说阅读环境。'">
+        th:content="${application.website.name}+' is an excellent novel website, '+${application.website.name}+' provides a massive collection of popular web novels, light novels, online reading of light novels, and TXT novel downloads, dedicated to collecting high-quality online novels, intelligent calculation of novel ratings, and creating a ranking of excellent novels'">
 
 
     <div th:include="mobile/common/css :: css"></div>
@@ -152,13 +153,13 @@
                             "            </a>\n" +
                             "            <div style=\";color: #4c6978;float: right;\"><i style=\"color: red\"></i></div>\n" +
                             "            <a href='/book/" + book.bookId + "/" + book.preContentId + ".html'>\n" +
-                            "                <div style=\";color: #a6a6a6;\" class=\"line-limit-length\">作者：" + book.authorName + "</div>\n" +
+                            "                <div style=\";color: #a6a6a6;\" class=\"line-limit-length\">Author: " + book.authorName + "</div>\n" +
                             "            </a>\n" +
-                            "            <div style=\"margin-top: 5px;color: #a6a6a6;\">类别：" + book.catName + "</div>\n" +
-                            "            <div style=\"margin-top: 5px;color: #a6a6a6;\">状态：" + (book.bookStatus == 0 ? '连载' : '完结') + "</div>\n" +
-                            "            <div style=\"margin-top: 5px;color: #a6a6a6;\">更新：<i style='color: red'>" + book.lastIndexUpdateTime.substr(0, 11) + "</i>\n" +
+                            "            <div style=\"margin-top: 5px;color: #a6a6a6;\">Genres: " + book.catName + "</div>\n" +
+                            "            <div style=\"margin-top: 5px;color: #a6a6a6;\">Status: " + (book.bookStatus == 0 ? 'Ongoing' : 'Complete') + "</div>\n" +
+                            "            <div style=\"margin-top: 5px;color: #a6a6a6;\">Update Time: <i style='color: red'>" + book.lastIndexUpdateTime.substr(0, 11) + "</i>\n" +
                             "            </div>\n" +
-                            "            <div style=\"margin-top: 5px;color: #a6a6a6;\">简介：" + (book.bookDesc ? (book.bookDesc.length > 15 ? (book.bookDesc.substr(0, 15) + "...") : book.bookDesc) : book.bookDesc) + "</div>\n" +
+                            "            <div style=\"margin-top: 5px;color: #a6a6a6;\">Introduction: " + (book.bookDesc ? (book.bookDesc.length > 15 ? (book.bookDesc.substr(0, 15) + "...") : book.bookDesc) : book.bookDesc) + "</div>\n" +
                             "\n" +
                             "\n" +
                             "        </div>\n" +

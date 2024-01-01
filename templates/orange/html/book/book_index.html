@@ -4,12 +4,11 @@
 
 <head th:replace="common/header :: common_head(~{::title},~{::meta},~{::link},~{})">
     <title
-        th:utext="${book.bookName}+'Category, '+${book.bookName}+' list of Latest Chapters_'+${application.website.name}">
+        th:utext="${book.bookName}+' Genres, '+${book.bookName}+' list of Latest Chapters '+${application.website.name}">
     </title>
-    <meta name="keywords"
-        th:content="${book.bookName}+','+${book.bookName}+'Category,'+${book.bookName}+' list of Latest Chapters.'" />
+    <meta name="keywords" th:content="${book.bookName}+' Genres, '+${book.bookName}+' list of Latest Chapters'" />
     <meta name="description"
-        th:content="${application.website.name}+' will provide '+${book.bookName}+'Category, '+${book.bookName}+' list of Latest Chapters,'+${book.bookName}+' read the Full Text,'+${book.bookName}+' read for free,'+${book.bookName}+'download'" />
+        th:content="${application.website.name}+' will provide '+${book.bookName}+' Genres, '+${book.bookName}+' list of Latest Chapters, '+${book.bookName}+' read the Full Text, '+${book.bookName}+' read for free, '+${book.bookName}+' download'" />
     <link rel="stylesheet" href="/css/main.css" />
     <link rel="stylesheet" href="/css/book.css" />
 </head>
@@ -38,7 +37,7 @@
                         <ul class="list">
                             <li>
                                 <span>Author: <a href="javascript:void(0)" th:utext="${book.authorName}"></a></span>
-                                <span>Category: <a th:href="'/book/bookclass.html?c='+${book.catId}"
+                                <span>Genres: <a th:href="'/book/bookclass.html?c='+${book.catId}"
                                         th:text="${book.catName}"></a></span>
                                 <span th:switch="${book.bookStatus}">Status: <em class="black3"
                                         th:case="'0'">Ongoing</em><em class="black3" th:case="*">Complete</em></span>

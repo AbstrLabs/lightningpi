@@ -5,9 +5,9 @@
 <head th:replace="common/header :: common_head(~{::title},~{::meta},~{::link},~{})">
     <title th:utext="${book.bookName}+'_'+${bookIndex.indexName}+'_'+${application.website.name}"></title>
     <meta name="keywords"
-        th:content="${book.bookName}+'Official Premiere,'+${book.bookName}+'Novel,'+${book.bookName}+'Latest Chapter '+${book.bookName}+'TXT Download_'+${book.bookName}+'No Pop-ups '+${book.bookName}+'Offline Completion.'" />
+        th:content="${book.bookName}+' Official Premiere '+${book.bookName}+' Novel, '+${book.bookName}+' Latest Chapter '+${book.bookName}+' TXT Download '+${book.bookName}+' No Pop-ups '+${book.bookName}+' Offline Completion'" />
     <meta name="description"
-        th:content="${book.bookName}+','+${book.bookName}+'Novel Reading, '+${application.website.name}+'provide, '+${book.bookName}+'first release of the Latest Chapter and TXT download, '+${book.bookName}+'latest updated chapters, all the excitement is here '+${application.website.name}+'.'" />
+        th:content="${book.bookName}+' Novel Reading, '+${application.website.name}+' provide, '+${book.bookName}+' first release of the Latest Chapter and TXT download, '+${book.bookName}+' latest updated chapters, all the excitement is here '+${application.website.name}+'.'" />
     <link rel="stylesheet" href="/css/read.css" />
     <link href="/css/book.css" rel="stylesheet" />
 
@@ -57,29 +57,34 @@
                 <div class="read_menu">
                     <div class="menu_left">
                         <ul>
-                            <li><a class="ico_catalog" th:href="'/book/indexList-'+${book.id}+'.html'" title="目录">
+                            <li><a class="ico_catalog" th:href="'/book/indexList-'+${book.id}+'.html'"
+                                    title="Directory">
                                     <b>Table of Contents</b></a></li>
-                            <li><a class="ico_page" th:href="'/book/'+${book.id}+'.html'" title="返回书页"><b>Page</b></a>
+                            <li><a class="ico_page" th:href="'/book/'+${book.id}+'.html'"
+                                    title="Return to Book Page"><b>Page</b></a>
                             </li>
-                            <li class="li_shelf" id="cFavs"><a class="ico_shelf" href="javascript:void(0);" title="加入书架"
-                                    onclick="javascript:BookDetail.AddFavorites(37,1959973,1);"><b>Add to Shelf</b></a>
+                            <li class="li_shelf" id="cFavs"><a class="ico_shelf" href="javascript:void(0);"
+                                    title="Add to Bookshelf"
+                                    onclick="javascript:BookDetail.AddFavorites(37,1959973,1);"><b>Add to
+                                        Bookshelf</b></a>
                             </li>
                             <li class="li_shelfed" style="display: none;"><a class="ico_shelfed"
-                                    href="javascript:void(0);" title="已收藏"><b>Already Favorited</b></a></li>
+                                    href="javascript:void(0);" title="Already Favorited"><b>Already Favorited</b></a>
+                            </li>
 
-                            <li><a class="ico_comment" th:href="'/book/comment-'+${book.id}+'.html'" title="评论">
+                            <li><a class="ico_comment" th:href="'/book/comment-'+${book.id}+'.html'" title="Comment">
                                     <b>Comment</b></a></li>
-                            <li><a class="ico_setup" href="javascript:void(0);" title="设置"><b>Setting</b></a></li>
+                            <li><a class="ico_setup" href="javascript:void(0);" title="Setting"><b>Setting</b></a></li>
                         </ul>
                     </div>
                     <div class="menu_right" style="position: fixed; bottom: 0">
                         <ul>
                             <li><a class="ico_pagePrev"
                                     th:href="'javascript:enterPreIndexPage(\''+${book.id}+'\',\''+${preBookIndexId}+'\');'"
-                                    title="上一章"><i>Previous Chapter</i></a></li>
+                                    title="Previous Chapter"><i>Previous Chapter</i></a></li>
                             <li><a class="ico_pageNext"
                                     th:href="'javascript:enterNextIndexPage(\''+${book.id}+'\',\''+${nextBookIndexId}+'\');'"
-                                    title="下一章"><i>Next Chapter</i></a></li>
+                                    title="Next Chapter"><i>Next Chapter</i></a></li>
                         </ul>
                     </div>
                 </div>
@@ -98,7 +103,7 @@
                                 <h1 th:utext="${bookIndex.indexName}">
                                 </h1>
                                 <div class="textinfo">
-                                    Category: <a th:href="'/book/bookclass.html?c='+${book.catId}"
+                                    Genres: <a th:href="'/book/bookclass.html?c='+${book.catId}"
                                         th:text="${book.catName}"></a>
                                     Author: <a th:href="'javascript:searchByK(\''+${book.authorName}+'\')'"
                                         th:utext="${book.authorName}"></a><span
@@ -125,7 +130,7 @@
                                     <form method="post" action="./2052117.html?bid=302&amp;cid=2052117" id="Form1">
                                         <ul class="order_list">
                                             <li>Price: <span class="red"
-                                                    th:text="${bookIndex.bookPrice}+'PI Coin(1USD=100PI Coin)'"></span>
+                                                    th:text="${bookIndex.bookPrice}+' PI Coin(1USD=100PI Coin)'"></span>
                                             </li>
                                             <li id="panelPay" class="btns"><a class="btn_red"
                                                     href="javascript:buyBookIndex()"></a></li>
@@ -231,17 +236,17 @@
 <div id="screenInput" class="screen_toolbar" >
     <div style="height: 5px" class="layui-col-xs2 layui-col-sm3 layui-col-md4 layui-col-lg4"></div>
     <div class="layui-col-xs6 layui-col-sm4 layui-col-md4 layui-col-lg4">
-        <input type="text" id="screenBulletText" required lay-verify="required" placeholder="请输入弹幕内容,右下角开关可控制弹幕是否开启" autocomplete="off"
+        <input type="text" id="screenBulletText" required lay-verify="required" placeholder="Please enter the bullet chat content. The switch in the bottom right corner controls whether the barrage is enabled" autocomplete="off"
                class="layui-input">
 
     </div>
     <div class="layui-col-xs2 layui-col-sm1 layui-col-md1 layui-col-lg1">
-        <button class="layui-btn  layui-btn-danger send">发送</button>
+        <button class="layui-btn  layui-btn-danger send">Send</button>
     </div>
 </div>
 <form id="screenSwitch" class="layui-form">
-    <div class="layui-form-item" style="position: fixed;right: 0px;bottom: 100px" title="弹幕开关">
-        &lt;!&ndash; <label  class="layui-form-label" style="opacity:0.5;font-weight: bold;color: red;">弹幕</label>&ndash;&gt;
+    <div class="layui-form-item" style="position: fixed;right: 0px;bottom: 100px" title="bullet chat Switch">
+        &lt;!&ndash; <label  class="layui-form-label" style="opacity:0.5;font-weight: bold;color: red;">bullet chat</label>&ndash;&gt;
         <div class="layui-input-block">
             <input class="clear" type="checkbox" name="switch" lay-skin="switch">
         </div>

@@ -7,9 +7,9 @@
     <meta th:if="${catId != 9}" name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <title th:utext="${book.bookName}+${bookIndex.indexName}"></title>
 
-    <meta name="keywords" th:content="${book.bookName}+','+${bookIndex.indexName}">
+    <meta name="keywords" th:content="${book.bookName}+' , '+${bookIndex.indexName}">
 
-    <meta name="description" th:content="${book.bookName}+'最新更新章节免费在线阅读TXT下载'">
+    <meta name="description" th:content="${book.bookName}+' Latest updated chapters free online reading TXT download'">
 
 
 
@@ -201,33 +201,37 @@
 
 
         <p class="Readpage" style="background:#FFFFFF;padding:2px;">
-            <a id="lightdiv" class="button lightoff" onclick="nr_setbg('light')">关灯</a>
-            <a id="huyandiv" class="button huyanon" onclick="nr_setbg('huyan')">护眼</a>&nbsp;&nbsp;&nbsp;&nbsp;
-            字体：<a id="fontbig" class="sizebg" onclick="nr_setbg('big')">大</a> <a id="fontmiddle" class="button sizebgon"
-                onclick="nr_setbg('middle')">中</a> <a id="fontsmall" class="sizebg" onclick="nr_setbg('small')">小</a>
+            <a id="lightdiv" class="button lightoff" onclick="nr_setbg('light')">Dark Mode</a>
+            <a id="huyandiv" class="button huyanon" onclick="nr_setbg('huyan')">Eye
+                Protection</a>&nbsp;&nbsp;&nbsp;&nbsp;
+            Font: <a id="fontbig" class="sizebg" onclick="nr_setbg('big')">Big</a> <a id="fontmiddle"
+                class="button sizebgon" onclick="nr_setbg('middle')">Middle</a> <a id="fontsmall" class="sizebg"
+                onclick="nr_setbg('small')">Small</a>
         </p>
         <div class="indexDiv" style="height: 42px;line-height: 42px;text-align:center;background: #f2f2f2">
 
             <a style="color: #333"
-                th:href="'javascript:enterPreIndexPage(\''+${book.id}+'\',\''+${preBookIndexId}+'\');'">上一章</a>
-            <a style="color: #333" th:href="'/book/indexList-'+${book.id}+'.html'">目录</a>
+                th:href="'javascript:enterPreIndexPage(\''+${book.id}+'\',\''+${preBookIndexId}+'\');'">Previous
+                Chapter</a>
+            <a style="color: #333" th:href="'/book/indexList-'+${book.id}+'.html'">Table of Contents</a>
             <a style="color: #333"
-                th:href="'javascript:enterNextIndexPage(\''+${book.id}+'\',\''+${nextBookIndexId}+'\');'">下一章</a>
+                th:href="'javascript:enterNextIndexPage(\''+${book.id}+'\',\''+${nextBookIndexId}+'\');'">Next
+                Chapter</a>
         </div>
         <!--<div id="screenInput" class="screen_toolbar" style="display: none">
     <div style="height: 5px" class="layui-col-xs2 layui-col-sm3 layui-col-md3 layui-col-lg3"></div>
     <div class="layui-col-xs6 layui-col-sm4 layui-col-md4 layui-col-lg4">
-        <input type="text" id="screenBulletText" required lay-verify="required" placeholder="请输入弹幕内容,右下角开关可控制弹幕是否开启" autocomplete="off"
+        <input type="text" id="screenBulletText" required lay-verify="required" placeholder="Please enter the bullet chat content. The switch in the bottom right corner controls whether the bullet chat is enabled" autocomplete="off"
                class="layui-input">
 
     </div>
     <div class="layui-col-xs2 layui-col-sm1 layui-col-md1 layui-col-lg1">
-        <button class="layui-btn send">发送</button>
+        <button class="layui-btn send">Send</button>
     </div>
 </div>
 <form id="screenSwitch" class="layui-form">
-    <div class="layui-form-item" style="position: fixed;right: 0px;bottom: 100px" title="弹幕开关">
-        &lt;!&ndash; <label  class="layui-form-label" style="opacity:0.5;font-weight: bold;color: red;">弹幕</label>&ndash;&gt;
+    <div class="layui-form-item" style="position: fixed;right: 0px;bottom: 100px" title="Bullet Chat Switch">
+        &lt;!&ndash; <label  class="layui-form-label" style="opacity:0.5;font-weight: bold;color: red;">Bullet Chat</label>&ndash;&gt;
         <div class="layui-input-block">
             <input class="clear" type="checkbox" name="switch" lay-skin="switch">
         </div>
@@ -244,18 +248,20 @@
         </div>
         <div class="Readarea ReadAjax_content screen_container"
             style="color: rgb(0, 0, 0); font-size: 20px;background-color: #fff" th:if="${needBuy}">
-            <h5>此章为VIP章节，需要订阅后才能继续阅读</h5>
-            价格：<span style="color: red" th:text="${bookIndex.bookPrice}+'屋币(1元=100屋币)'"></span><br />
-            <a href="javascript:buyBookIndex()" type="button" class="layui-btn layui-btn-sm layui-btn-radius">购买</a>
+            <h5>This chapter is a VIP chapter. You need to subscribe to continue reading.</h5>
+            Price: <span style="color: red" th:text="${bookIndex.bookPrice}+' PI Coin(1USD=100PI Coin)'"></span><br />
+            <a href="javascript:buyBookIndex()" type="button" class="layui-btn layui-btn-sm layui-btn-radius">Buy</a>
 
         </div>
         <div class="indexDiv" style="height: 42px;line-height: 42px;text-align:center;background: #f2f2f2">
 
             <a style="color: #333"
-                th:href="'javascript:enterPreIndexPage(\''+${book.id}+'\',\''+${preBookIndexId}+'\');'">上一章</a>
-            <a style="color: #333" th:href="'/book/indexList-'+${book.id}+'.html'">目录</a>
+                th:href="'javascript:enterPreIndexPage(\''+${book.id}+'\',\''+${preBookIndexId}+'\');'">Previous
+                Chapter</a>
+            <a style="color: #333" th:href="'/book/indexList-'+${book.id}+'.html'">Table of Contents</a>
             <a style="color: #333"
-                th:href="'javascript:enterNextIndexPage(\''+${book.id}+'\',\''+${nextBookIndexId}+'\');'">下一章</a>
+                th:href="'javascript:enterNextIndexPage(\''+${book.id}+'\',\''+${nextBookIndexId}+'\');'">Next
+                Chapter</a>
 
         </div>
 

@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <head th:replace="common/header :: common_head(~{::title},~{},~{::link},~{})">
-    <title th:text="'修改性别_'+${application.website.name}"></title>
+    <title th:text="'Modify Gender '+${application.website.name}"></title>
     <link rel="stylesheet" href="/css/user.css" />
 </head>
 
@@ -16,11 +16,11 @@
             <div class="my_l">
 
                 <ul class="log_list">
-                    <li><a class="link_1 " href="/user/userinfo.html">个人中心</a></li>
-                    <li><a class="link_4" href="/user/favorites.html">我的书架</a></li>
-                    <li><a class="link_6" href="/user/comment.html">我的书评</a></li>
-                    <li><a class="link_7 " href="/user/feedback_list.html">我的反馈</a></li>
-                    <li><a class="link_8 on" href="/user/setup.html">账号设置</a></li>
+                    <li><a class="link_1 " href="/user/userinfo.html">Personal Center</a></li>
+                    <li><a class="link_4" href="/user/favorites.html">My Bookshelf</a></li>
+                    <li><a class="link_6 on" href="/user/comment.html">My Book Reviews</a></li>
+                    <li><a class="link_7 " href="/user/feedback_list.html">My Feedback</a></li>
+                    <li><a class="link_8 " href="/user/setup.html">Account Settings</a></li>
                 </ul>
 
             </div>
@@ -28,12 +28,13 @@
                 <div class="my_info cf">
                     <div class="my_info_txt">
                         <ul class="mytab_list">
-                            <li><i class="tit">我的性别</i>
-                                <label><input type="radio" name="sex" value="0" />&nbsp;男生</label>
-                                <label><input class="ml20" type="radio" name="sex" value="1" checked />&nbsp;女生</label>
+                            <li><i class="tit">Choose Gender Channel for Reading Preference</i>
+                                <label><input type="radio" name="sex" value="0" />&nbsp;Male</label>
+                                <label><input class="ml20" type="radio" name="sex" value="1"
+                                        checked />&nbsp;Female</label>
                             </li>
                             <li class="mt20"><i class="tit">&nbsp;</i><input type="button" onclick="updateSex()"
-                                    name="btn" value="修改" id="btn" class="s_btn btn_red" /></li>
+                                    name="btn" value="Edit" id="btn" class="s_btn btn_red" /></li>
                             <li><i class="tit">&nbsp;</i><span id="LabErr"></span></li>
                         </ul>
                     </div>

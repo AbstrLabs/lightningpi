@@ -3,11 +3,11 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <head th:replace="common/header :: common_head(~{::title},~{::meta},~{::link},~{})">
-    <title th:text="${book.bookName}+'Comment_Section_'+${application.website.name}"></title>
+    <title th:text="${book.bookName}+' Comment Section '+${application.website.name}"></title>
     <meta name="keywords"
-        th:content="${book.bookName}+'Official Premiere '+${book.bookName}+'Novel, '+${book.bookName}+'Latest Chapter '+${book.bookName}+' TXT Download,'+${book.bookName}+'No Pop-ups, '+${book.bookName}+'Offline Completion.'" />
+        th:content="' Official Premiere '+${book.bookName}+' Novel, '+${book.bookName}+' Latest Chapter '+${book.bookName}+' TXT Download, '+${book.bookName}+' No Pop-ups, '+${book.bookName}+' Offline Completion'" />
     <meta name="description"
-        th:content="${book.bookName}+','+${book.bookName}+'Novel Reading,'+${application.website.name}+'Provide'+${book.bookName}+'First Release of the Latest Chapter and TXT Download,'+${book.bookName}+'Latest updated chapters, all the excitement is here'+${application.website.name}+'.'" />
+        th:content="${book.bookName}+' Novel Reading,'+${application.website.name}+' Provide '+${book.bookName}+' first Release of the Latest Chapter and TXT Download, '+${book.bookName}+' Latest updated chapters, all the excitement is here'+${application.website.name}+'.'" />
     <link href="/css/main.css" rel="stylesheet" />
     <link href="/css/book.css" rel="stylesheet" />
 </head>
@@ -55,7 +55,7 @@
                                     placeholder="Say something..."></textarea>
                                 <div class="reply_btn">
                                     <span class="fl black9"><em class="ml5" id="emCommentNum">0/100</em>
-                                        Word</span>
+                                        Words</span>
                                     <span class="fr"><a class="btn_ora" href="javascript:void(0);"
                                             onclick="javascript:BookDetail.SaveComment(37,0,$('#txtComment').val());">Publish</a></span>
                                 </div>

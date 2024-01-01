@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <head th:replace="common/header :: common_head(~{::title},~{},~{::link},~{})">
-    <title th:text="'我的反馈_'+${application.website.name}"></title>
+    <title th:text="'My Feedback '+${application.website.name}"></title>
     <link rel="stylesheet" href="/css/user.css" />
 </head>
 
@@ -16,19 +16,19 @@
             <div class="my_l">
 
                 <ul class="log_list">
-                    <li><a class="link_1 " href="/user/userinfo.html">个人中心</a></li>
-                    <li><a class="link_4" href="/user/favorites.html">我的书架</a></li>
-                    <li><a class="link_6" href="/user/comment.html">我的书评</a></li>
-                    <li><a class="link_7 on" href="/user/feedback_list.html">我的反馈</a></li>
-                    <li><a class="link_8 " href="/user/setup.html">账号设置</a></li>
+                    <li><a class="link_1 " href="/user/userinfo.html">Personal Center</a></li>
+                    <li><a class="link_4 on" href="/user/favorites.html">My Bookshelf</a></li>
+                    <li><a class="link_6 " href="/user/comment.html">My Book Reviews</a></li>
+                    <li><a class="link_7 " href="/user/feedback_list.html">My Feedback</a></li>
+                    <li><a class="link_8 " href="/user/setup.html">Account Settings</a></li>
                 </ul>
 
             </div>
             <div class="my_r">
                 <div class="my_bookshelf">
                     <div class="title cf">
-                        <h2 class="fl">我的反馈</h2>
-                        <div class="fr"><a href="/user/feedback.html" class="btn_red">写反馈</a></div>
+                        <h2 class="fl">My Feedback</h2>
+                        <div class="fr"><a href="/user/feedback.html" class="btn_red">Write Feedback</a></div>
                     </div>
 
                     <dl class="feedback_list cf">
@@ -41,7 +41,7 @@
                     </dl>
                     <div class="cf">
                         <div class="help_bar fl hidden">
-                            <a href=""><span class="txt">读者常见问题(18)</span></a>
+                            <a href=""><span class="txt">Common Reader Questions(18)</span></a>
                         </div>
                         <div class="pageBox cf" id="feedbackPage">
                         </div>

@@ -6,13 +6,13 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <title th:text="${application.website.name}+'列表'"></title>
+    <title th:text="${application.website.name}+' List'"></title>
 
     <meta name="keywords"
-        th:content="${application.website.name}+',精品小说,弹幕网站,弹幕,弹幕小说网站,免费小说,小说阅读,小说排行,轻小说,txt小说下载,电子书下载,动漫轻小说,日本轻小说'">
+        th:content="${application.website.name}+', high-quality novels, free novels, novel reading, novel rankings, light novels, TXT novel downloads, ebook downloads'">
 
     <meta name="description"
-        th:content="${application.website.name}+'是国内优秀的小说弹幕网站,'+${application.website.name}+'提供海量热门网络小说,日本轻小说,国产轻小说,动漫小说,轻小说在线阅读和TXT小说下载,致力于网络精品小说的收集,智能计算小说评分,打造小说精品排行榜,致力于无广告无弹窗的小说阅读环境。'">
+        th:content="${application.website.name}+' is an excellent novel website, '+${application.website.name}+' provides a massive collection of popular web novels, light novels, online reading of light novels, and TXT novel downloads, dedicated to collecting high-quality online novels, intelligent calculation of novel ratings, and creating a ranking of excellent novels'">
 
 
     <div th:include="mobile/common/css :: css"></div>
@@ -102,7 +102,7 @@
             <a href="javascript:history.go(-1)">
                 <i style="font-size: 20px;color: #fff;" class="layui-icon">&#xe65c;</i></a>
         </div>
-        <b class="layui-icon">充值</b>
+        <b class="layui-icon">Recharge</b>
         <div style="width:10%;float: right;margin-right: 10px"><a href="/">
                 <i style="font-size: 20px;color: #fff;" class="layui-icon">&#xe68e;</i>
             </a>
@@ -111,41 +111,42 @@
     <div id="body" class="layui-row">
         <div class="payHead cf">
             <div class="fl">
-                充值账号：<span class="user_name" id="my_name">13560421324</span>&nbsp;&nbsp;&nbsp;&nbsp;余额：<em
-                    style="color: #f80" id="accountBalance">10</em> 屋币
-                <!--<em class="red">+0</em>代金券-->
+                Recharge Account: <span class="user_name" id="my_name"></span>
+                &nbsp;&nbsp;&nbsp;&nbsp;Balance:
+                <em style="color: #f80" id="accountBalance"></em> PI Coin
+                <!--<em class="red">+0</em>Voucher-->
             </div>
         </div>
         <div id="payAmount" class="pay_way layui-row layui-col-space15" style="text-align: center;padding-top: 20px;">
-            <h5>选择充值金额</h5>
+            <h5>Select Recharge Amount</h5>
             <li vals="10" class="layui-col-xs4 layui-col-sm3 layui-col-md2">
                 <div class="layui-panel">
-                    <div><strong>10元</strong><br><span class="pay_mn">1000屋币</span></div>
+                    <div><strong>10 USD</strong><br><span class="pay_mn">1000PI Coin</span></div>
                 </div>
             </li>
             <li vals="30" class="layui-col-xs4 layui-col-sm3 layui-col-md2">
                 <div class="layui-panel">
-                    <div><strong>30元</strong><br><span class="pay_mn">3000屋币</span></div>
+                    <div><strong>30 USD</strong><br><span class="pay_mn">3000PI Coin</span></div>
                 </div>
             </li>
             <li vals="50" class="layui-col-xs4 layui-col-sm3 layui-col-md2">
                 <div class="layui-panel">
-                    <div><strong>50元</strong><br><span class="pay_mn">5000屋币</span></div>
+                    <div><strong>50 USD</strong><br><span class="pay_mn">5000PI Coin</span></div>
                 </div>
             </li>
             <li vals="100" class="layui-col-xs4 layui-col-sm3 layui-col-md2">
                 <div class="layui-panel">
-                    <div><strong>100元</strong><br><span class="pay_mn">10000屋币</span></div>
+                    <div><strong>100 USD</strong><br><span class="pay_mn">10000PI Coin</span></div>
                 </div>
             </li>
             <li vals="200" class="layui-col-xs4 layui-col-sm3 layui-col-md2">
                 <div class="layui-panel">
-                    <div><strong>200元</strong><br><span class="pay_mn">20000屋币</span></div>
+                    <div><strong>200 USD</strong><br><span class="pay_mn">20000PI Coin</span></div>
                 </div>
             </li>
             <li vals="500" class="layui-col-xs4 layui-col-sm3 layui-col-md2">
                 <div class="layui-panel">
-                    <div><strong>500元</strong><br><span class="pay_mn">50000屋币</span></div>
+                    <div><strong>500 USD</strong><br><span class="pay_mn">50000PI Coin</span></div>
                 </div>
             </li>
 

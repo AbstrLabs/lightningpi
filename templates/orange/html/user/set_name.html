@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <head th:replace="common/header :: common_head(~{::title},~{},~{::link},~{})">
-    <title th:text="'修改昵称_'+${application.website.name}"></title>
+    <title th:text="'Modify Nickname '+${application.website.name}"></title>
     <link rel="stylesheet" href="/css/user.css" />
 </head>
 
@@ -16,11 +16,11 @@
             <div class="my_l">
 
                 <ul class="log_list">
-                    <li><a class="link_1 " href="/user/userinfo.html">个人中心</a></li>
-                    <li><a class="link_4" href="/user/favorites.html">我的书架</a></li>
-                    <li><a class="link_6" href="/user/comment.html">我的书评</a></li>
-                    <li><a class="link_7 " href="/user/feedback_list.html">我的反馈</a></li>
-                    <li><a class="link_8 on" href="/user/setup.html">账号设置</a></li>
+                    <li><a class="link_1 " href="/user/userinfo.html">Personal Center</a></li>
+                    <li><a class="link_4" href="/user/favorites.html">My Bookshelf</a></li>
+                    <li><a class="link_6 on" href="/user/comment.html">My Book Reviews</a></li>
+                    <li><a class="link_7 " href="/user/feedback_list.html">My Feedback</a></li>
+                    <li><a class="link_8 " href="/user/setup.html">Account Settings</a></li>
                 </ul>
 
             </div>
@@ -28,11 +28,12 @@
                 <div class="my_info cf">
                     <div class="my_info_txt">
                         <ul class="mytab_list">
-                            <li><i class="tit">我的昵称</i><input name="txtNiceName" type="text" value="15171695474"
+                            <li><i class="tit">My Nickname</i><input name="txtNiceName" type="text" value="15171695474"
                                     maxlength="20" id="txtNiceName" class="s_input" placeholder="" /></li>
-                            <li><i class="tit">&nbsp;</i>用户名只能包括汉字、英文字母、数字和下划线</li>
+                            <li><i class="tit">&nbsp;</i>Username can only include Chinese characters, English letters,
+                                numbers, and underscores</li>
                             <li><i class="tit">&nbsp;</i><input type="button" onclick="updateName()" name="btn"
-                                    value="修改" id="btn" class="s_btn btn_red" /></li>
+                                    value="Edit" id="btn" class="s_btn btn_red" /></li>
                             <li><i class="tit">&nbsp;</i><span id="LabErr"></span></li>
                         </ul>
                     </div>
@@ -77,11 +78,11 @@
         function updateName() {
             var nickname = $("#txtNiceName").val();
             if (nickname.isBlank()) {
-                $("#LabErr").html("昵称不能为空！");
+                $("#LabErr").html("Nickname cannot be empty!");
                 return;
             }
             if (!nickname.isNickName()) {
-                $("#LabErr").html("昵称格式不正确！");
+                $("#LabErr").html("Nickname format is incorrect!");
                 return;
             }
             $.ajax({

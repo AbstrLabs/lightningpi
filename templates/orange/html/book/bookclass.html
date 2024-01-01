@@ -5,9 +5,9 @@
 <head th:replace="common/header :: common_head(~{::title},~{::meta},~{::link},~{})">
     <title th:text="'All Novels '+${application.website.name}"></title>
     <meta name="keywords"
-        th:content="${application.website.name}+', Novel, Novel Website, Romance Novel, Urban Novel, Fantasy Novel, Time-Travel Novel, Youth Novel, CEO Wealthy Family Novel, Online Novel, Free Novel, Complete Novel, Original Online Literature.'" />
+        th:content="${application.website.name}+' Novel Website, Romance Novel, Urban Novel, Fantasy Novel, Time-Travel Novel, Youth Novel, CEO Wealthy Family Novel, Online Novel, Free Novel, Complete Novel, Original Online Literature.'" />
     <meta name="description"
-        th:content="${application.website.name}+' Daily updated serialized novels, novel rankings, providing romance novels, urban novels, fantasy novels, time-travel novels, youth novels, CEO wealthy family novels, online novels, free novels, complete novels, debut novels, latest chapters for free novel reading, all the excitement is here '+${application.website.name}+'.'" />
+        th:content="${application.website.name}+' Daily updated serialized novels, novel rankings, providing romance novels, urban novels, fantasy novels, time-travel novels, youth novels, CEO wealthy family novels, online novels, free novels, complete novels, debut novels, latest chapters for free novel reading, all the excitement is here '" />
     <link href="favicon.ico" type="image/x-icon" rel="shortcut icon" />
     <link href="favicon.ico" type="image/x-icon" rel="Bookmark" />
     <link rel="stylesheet" href="/css/main.css" />
@@ -24,22 +24,22 @@
                 <ul class="list">
                     <li class="so_pd" id="workDirection">
                         <span class="tit">Channel: </span>
-                        <a filter-value="0" href="javascript:listBookCategory();search(1,20)" class="on">Men's
+                        <a filter-value="0" href="javascript:listBookCategory();search(1,20)" class="on">Male's
                             Section</a>
-                        <a filter-value="1" href="javascript:listBookCategory();search(1,20)">Women's Section</a>
+                        <a filter-value="1" href="javascript:listBookCategory();search(1,20)">Female's Section</a>
                     </li>
                     <li id="idGirl" class="so_class">
-                        <span class="tit">Category: </span>
+                        <span class="tit">Genres: </span>
                         <span class="so_girl" id="girlCategoryList" style="display: none;">
                         </span>
                         <span class="so_boy" id="boyCategoryList">
                         </span>
                     </li>
                     <!-- <li class="so_free">
-                    <span class="tit">是否免费：</span>
+                    <span class="tit">Free Or Charge: </span>
                     <a href="?b=0&s=0&wb=0&wd=0&up=0&fr=0&so=0&ms=2" class="on">No Limit</a>
-                    <a href="?b=0&s=0&wb=0&wd=0&up=0&fr=1&so=0&ms=2" class="">免费作品</a>
-                    <a href="?b=0&s=0&wb=0&wd=0&up=0&fr=2&so=0&ms=2" class="">收费作品</a>
+                    <a href="?b=0&s=0&wb=0&wd=0&up=0&fr=1&so=0&ms=2" class="">Free</a>
+                    <a href="?b=0&s=0&wb=0&wd=0&up=0&fr=2&so=0&ms=2" class="">Charge</a>
                 </li>-->
                     <li class="so_progress">
                         <span class="tit">Complete Or Not: </span>
@@ -84,7 +84,7 @@
                     <thead>
                         <tr>
                             <th class="rank">Serial Number</th>
-                            <th class="style">Category</th>
+                            <th class="style">Genres</th>
                             <th class="name">Title</th>
                             <th class="chapter">Latest Chapter</th>
                             <th class="author">Author</th>

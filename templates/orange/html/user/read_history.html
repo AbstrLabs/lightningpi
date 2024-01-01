@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <head th:replace="common/header :: common_head(~{::title},~{},~{::link},~{})">
-    <title th:text="'最近阅读_'+${application.website.name}"></title>
+    <title th:text="'Recently Read '+${application.website.name}"></title>
     <link rel="stylesheet" href="/css/user.css" />
 </head>
 
@@ -16,28 +16,28 @@
             <div class="viewhistoryBox">
                 <div class="my_bookshelf">
                     <div class="title cf">
-                        <h2 class="fl ml10"><a href="javascript:void(0);" class="red">最近阅读</a></h2><i
+                        <h2 class="fl ml10"><a href="javascript:void(0);" class="red">Recently Read</a></h2><i
                             class="fl ml20 mr20 font16">|</i>
-                        <h2 class="fl"><a href="/user/favorites.html">我的书架</a></h2>
+                        <h2 class="fl"><a href="/user/favorites.html">My Bookshelf</a></h2>
                     </div>
                     <div id="divData" class="updateTable">
                         <table cellpadding="0" cellspacing="0">
                             <thead>
                                 <tr>
                                     <th class="style">
-                                        类别
+                                        Genres
                                     </th>
                                     <th class="name">
-                                        书名
+                                        Title
                                     </th>
                                     <th class="chapter">
-                                        最新章节
+                                        Latest Chapters
                                     </th>
                                     <th class="time">
-                                        更新时间
+                                        Update Time
                                     </th>
                                     <th class="goread">
-                                        书签
+                                        Bookmarks
                                     </th>
                                 </tr>
                             </thead>
@@ -98,7 +98,7 @@
                                     "                                " + book.lastIndexUpdateTime + "\n" +
                                     "                            </td>\n" +
                                     "                            <td class=\"goread\">\n" +
-                                    "<a href='/book/" + book.bookId + "/" + book.preContentId + ".html'>继续阅读</a>" +
+                                    "<a href='/book/" + book.bookId + "/" + book.preContentId + ".html'>Continue Reading</a>" +
                                     "                            </td>\n" +
                                     "                        </tr>");
                             }
