@@ -109,7 +109,7 @@ if (!token) {
         location.href = '/user/login.html?originUrl=' + decodeURIComponent(location.href);
     }
 
-    $(".user_link").html("<a href=\"/user/login.html\">登录</a>｜<a href=\"/user/register.html\">注册</a>");
+    $(".user_link").html("<a href=\"/user/login.html\">Log In</a>｜<a href=\"/user/register.html\">Register</a>");
 } else {
     $.ajax({
         type: "POST",
@@ -129,26 +129,26 @@ if (!token) {
                 }
                 isLogin = true;
                 if (localStorage.getItem("autoLogin") == 1) {
-                    $.cookie('Authorization', data.data.token, {expires: 7, path: '/'});
+                    $.cookie('Authorization', data.data.token, { expires: 7, path: '/' });
                 } else {
-                    $.cookie('Authorization', data.data.token, {path: '/'});
+                    $.cookie('Authorization', data.data.token, { path: '/' });
                 }
             } else {
                 if (needLoginPath.indexOf(window.location.pathname) != -1) {
                     location.href = '/user/login.html';
                 }
-                $(".user_link").html("<a href=\"/user/login.html\">登录</a>｜<a href=\"/user/register.html\">注册</a>");
+                $(".user_link").html("<a href=\"/user/login.html\">Log In</a>｜<a href=\"/user/register.html\">Register</a>");
             }
         },
         error: function () {
-            layer.alert('网络异常');
+            layer.alert('Network Exception');
         }
 
     });
 }
 
 function logout() {
-    $.cookie('Authorization', null, {path: '/'});
+    $.cookie('Authorization', null, { path: '/' });
     location.reload();
 }
 

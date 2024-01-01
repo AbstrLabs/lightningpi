@@ -1,8 +1,6 @@
 ﻿var $C = function (objName) {
-    if (typeof (document.getElementById(objName)) != "object")
-    { return null; }
-    else
-    { return document.getElementById(objName); }
+    if (typeof (document.getElementById(objName)) != "object") { return null; }
+    else { return document.getElementById(objName); }
 }
 jQuery.cookie = function (name, value, options) {
     if (typeof value != 'undefined') {
@@ -145,7 +143,7 @@ var HeaderShowUtil = {
         if (uname != undefined && uname != "") {
         }
         else {
-            rStr = '<li><a href="/user/login.html">请先登录</a></li>';
+            rStr = '<li><a href="/user/login.html">Please Log In First</a></li>';
             $("#hsShowFav ul").html(rStr);
         }
 

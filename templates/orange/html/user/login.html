@@ -20,15 +20,15 @@
         <div class="userBox cf">
             <div class="user_l">
                 <form method="post" action="./login.html" id="form1">
-                    <h3 th:text="'Log In'+${application.website.name}"></h3>
+                    <h3 th:text="'Log In '+${application.website.name}"></h3>
                     <ul class="log_list">
                         <li><span id="LabErr"></span></li>
                         <li><input name="txtUName" type="text" id="txtUName" placeholder="Phone number"
                                 class="s_input icon_name" /></li>
                         <li><input name="txtPassword" type="password" id="txtPassword" placeholder="Password"
                                 class="s_input icon_key" /></li>
-                        <li class="autologin cf"><label class="fl"><input id="autoLogin" type="checkbox" /><em>Next time
-                                    Auto Log In</em></label></li>
+                        <li class="autologin cf"><label class="fl"><input id="autoLogin" type="checkbox" />
+                                <em>Next Time Automatically Log In</em></label></li>
                         <li><input type="button" name="btnLogin" value="Log In" id="btnLogin" class="btn_red" /></li>
                     </ul>
                 </form>
