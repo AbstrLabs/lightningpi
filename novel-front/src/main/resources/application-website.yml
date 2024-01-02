@@ -7,6 +7,6 @@ website:
   #SEO关键词
   keyword: ${website.name},novel, , original novel, popular web novels, light novels
   #SEO描述
-  description: ${website.name} is a feature-rich novel website that supports reading on multiple platforms (PC, WAP). It includes features such as member recharge, subscription models, and news publishing. New books are automatically added to the library, and old books are updated automatically
+  description: ${website.name} is a feature-rich novel website that supports reading on multiple platforms (PC, WAP). It includes features such as membership, subscription models, and news publishing. New books are automatically added to the library, and books are updated automatically
   #联系QQ
   qq:

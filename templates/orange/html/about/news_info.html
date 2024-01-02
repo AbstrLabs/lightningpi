@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <head th:replace="common/header :: common_head(~{::title},~{::meta},~{::link},~{})">
-    <title th:text="'News Announcements_'+${application.website.name}"></title>
+    <title th:text="'News Announcements '+${application.website.name}"></title>
     <meta name="keywords"
         content="News announcement, novel, novel website, romance novel, urban novel, fantasy novel, time-travel novel, youth novel, CEO wealthy family novel, online novel, free novel, complete novel, original online literature" />
     <meta name="description"
@@ -26,9 +26,9 @@
                 <div class="news_title">
                     <h2 th:utext="${news.title}"></h2>
                     <!--while [[...]] corresponds to th:text (i.e. result will be HTML-escaped), [(...)] corresponds to th:utext-->
-                    <p class="from">Source：[[${news.sourceName}]] <span class="time"
-                            th:text="'Create Time：'+${#dates.format(news.createTime, 'yy-MM-dd')}"></span> <span
-                            class="time" th:text="'Read Count：'+${news.readCount}"></span></p>
+                    <p class="from">Source: [[${news.sourceName}]] <span class="time"
+                            th:text="'Create Time: '+${#dates.format(news.createTime, 'yy-MM-dd')}"></span> <span
+                            class="time" th:text="'Read Count: '+${news.readCount}"></span></p>
                 </div>
                 <div class="news_info" th:utext="${news.content}">
                 </div>

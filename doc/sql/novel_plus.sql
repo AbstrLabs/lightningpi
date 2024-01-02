@@ -2457,7 +2457,7 @@ CREATE TABLE `user_feedback`
 -- Records of user_feedback
 -- ----------------------------
 INSERT INTO `user_feedback`
-VALUES ('8', '1255060328322027520', '好战，多点书', '2020-04-30 08:58:49');
+VALUES ('8', '1255060328322027520', '多点书', '2020-04-30 08:58:49');
 
 -- ----------------------------
 -- Table structure for user_read_history

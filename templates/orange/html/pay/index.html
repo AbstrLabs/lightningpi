@@ -3,7 +3,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <head th:replace="common/header :: common_head(~{::title},~{},~{::link},~{})">
-    <title th:text="'Recharge '+${application.website.name}"></title>
+    <title th:text="'Fill Coin '+${application.website.name}"></title>
     <link rel="stylesheet" href="/css/base.css" />
     <link rel="stylesheet" href="/css/main.css" />
 </head>
@@ -21,8 +21,8 @@
                 <div class="payBox cf">
                     <div class="payHead cf">
                         <div class="fl">
-                            Recharge Account: <span class="user_name" id="my_name"></span>Balance: <em class="red"
-                                id="accountBalance">0</em>PI Coin
+                            Account: <span class="user_name" id="my_name"></span>Balance: <em class="red"
+                                id="accountBalance">0</em> PI Coin
                             <!--<em class="red">+0</em>Voucher-->
                         </div>
                     </div>
@@ -34,7 +34,7 @@
                             <li valp="2"><img class="pay_pic" src="../images/pay_wx.png" alt="Wechat Pay" /></li>
 
                         </ul>
-                        <h5>Select Recharge Amount</h5>
+                        <h5>Select Amount</h5>
                         <ul class="pay_way cf" style="display:none;" id="ulPayPal">
                             <li vals="20"><strong>20 USD</strong><span class="pay_mn">2000 PI Coin</span></li>
                             <li vals="50" class="on"><strong>50 USD</strong><span class="pay_mn">5000 PI Coin<em
@@ -53,11 +53,12 @@
                     <div class="payFoot">
                         <strong class="tip_tit">Friendly Reminder</strong>
                         <ul class="tip_list">
-                            <li>1. Recharge for reading access is only valid within this book platform</li>
-                            <li>2. Recharge supports credit cards, debit cards, Paypal, and other payment methods</li>
+                            <li>1. Add more coins for reading access is only valid within this book platform</li>
+                            <li>2. Add more coins supports credit cards, debit cards, Paypal, and other payment methods
+                            </li>
                             <li>3. Annual subscription is for 365 days, and the purchase time will be cumulative in case
                                 of repeated purchases</li>
-                            <li>4. If you encounter any issues with the recharge, <a href="/user/feedback.html"
+                            <li>4. If you encounter any issues with adding coins, <a href="/user/feedback.html"
                                     target="_blank" class="unlink black9">click here to leave a message</a>
                             </li>
                         </ul>
