@@ -1,8 +1,6 @@
 var $C = function (objName) {
-    if (typeof (document.getElementById(objName)) != "object")
-    { return null; }
-    else
-    { return document.getElementById(objName); }
+    if (typeof (document.getElementById(objName)) != "object") { return null; }
+    else { return document.getElementById(objName); }
 }
 var YT = {
     BaseCommon: {
@@ -71,8 +69,7 @@ var YT = {
             if (typeof (height) == 'undefind' || height == null) { height = 550; }
             var fits = false;
             if (typeof (needFits) != "undefined" && needFits) {
-                if (document.body.clientWidth < 650 || document.body.clientHeight < 450 || document.body.clientHeight - 50 < height)
-                { fits = true; }
+                if (document.body.clientWidth < 650 || document.body.clientHeight < 450 || document.body.clientHeight - 50 < height) { fits = true; }
             }
             if ($C("YT_Panel") == null) {
                 var sp = document.createElement("div");
@@ -228,19 +225,15 @@ var YT = {
                 if (showobj.style.display == 'none') {
                     showobj.style.display = '';
                 }
-                if (xlong)
-                { showobj.style.top = YT.BaseCommon.gT(obj) + 20 + xlong + "px"; }
-                else
-                { showobj.style.top = YT.BaseCommon.gT(obj) + 20 + "px"; }
-                if (ylong)
-                { showobj.style.left = YT.BaseCommon.gL(obj) + ylong + "px"; }
-                else
-                { showobj.style.left = YT.BaseCommon.gL(obj) + "px"; }
+                if (xlong) { showobj.style.top = YT.BaseCommon.gT(obj) + 20 + xlong + "px"; }
+                else { showobj.style.top = YT.BaseCommon.gT(obj) + 20 + "px"; }
+                if (ylong) { showobj.style.left = YT.BaseCommon.gL(obj) + ylong + "px"; }
+                else { showobj.style.left = YT.BaseCommon.gL(obj) + "px"; }
             }
         },
-        GetDateDiff:function(startTime,endTime, diffType) {
+        GetDateDiff: function (startTime, endTime, diffType) {
             startTime = startTime.replace(/\-/g, "/");
-            endTime= endTime.replace(/\-/g, "/");
+            endTime = endTime.replace(/\-/g, "/");
             diffType = diffType.toLowerCase();
             var sTime = new Date(startTime);
             var eTime = new Date(endTime);
@@ -430,12 +423,12 @@ $.extend($.fn.validatebox.defaults.rules, {
         }, message: '必须是大于零的数字'
     },
     isFloatMin0:
-        {
-            validator: function (value, param) {
-                var reg = /^(^\d{1,9})$|^(\d{1,9}\.\d{1,9})$/;
-                return reg.test(value);
-            }, message: '必须是大于零的数字'
-        },
+    {
+        validator: function (value, param) {
+            var reg = /^(^\d{1,9})$|^(\d{1,9}\.\d{1,9})$/;
+            return reg.test(value);
+        }, message: '必须是大于零的数字'
+    },
     isPassWord: {
         validator: function (value, param) {
             var reg = /^[a-zA-Z0-9_]{5,15}$/;
@@ -526,7 +519,7 @@ var DirtInfo = {
     EnumAdmActClass: [[50, "签约等级修改"], [51, "封面修改"], [52, "渠道添加"], [53, "渠道修改"], [54, "渠道删除"], [55, "章节删除"]],
     EnumSettlementType: [[0, "未结算"], [1, "已结算"], [2, "结算失败"]],
     EnumBookProcess: [[0, "连载"], [1, "完结"]],
-    EnumAuthStatus: [[1 ,"独家"], [2, "非独家"]]
+    EnumAuthStatus: [[1, "独家"], [2, "非独家"]]
 };
 
 function dateToDate(date) {
@@ -598,7 +591,7 @@ function initSubmitButton(wait) {
                 return false;
             }
             var oldVal = $(this).val();
-            $(this).val("正在处理，请稍等(" + wait + ")");
+            $(this).val("Processing, please wait ( " + wait + " ) ");
             $(this).attr("submited", "1");
             setTimeout('ButtonLimit("' + $(this).attr("id") + '",' + wait + ',"' + oldVal + '")', 1000);
         });
@@ -607,7 +600,7 @@ function initSubmitButton(wait) {
 function ButtonLimit(objId, wait, oldVal) {
     wait--;
     if (wait > 0) {
-        $("#" + objId).val("正在处理，请稍等(" + wait + ")");
+        $("#" + objId).val("Processing, please wait ( " + wait + " ) ");
         setTimeout('ButtonLimit("' + objId + '",' + wait + ',"' + oldVal + '");', 1000);
     }
     else {

@@ -87,7 +87,7 @@ if (!token) {
             }
         },
         error: function () {
-            layer.alert('网络异常');
+            layer.alert('Network Exception');
         }
 
     });
@@ -136,7 +136,7 @@ function isImg(str) {
 function checkPicUpload(file) {
 
     if (!isImg(file.value.substr(file.value.lastIndexOf(".")))) {
-        layer.alert('只能上传图片格式的文件！');
+        layer.alert('Only image files can be uploaded!');
         return false;
     }
     var fileSize = 0;
@@ -151,7 +151,7 @@ function checkPicUpload(file) {
     }
     fileSize = Math.round(fileSize / 1024 * 100) / 100; //单位为KB
     if (fileSize >= 1024) {
-        layer.alert('上传的图片大小不能超过1M！');
+        layer.alert('The size of the uploaded image cannot exceed 1M!');
         return false;
     }
     return true;

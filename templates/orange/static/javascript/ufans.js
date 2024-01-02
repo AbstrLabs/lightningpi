@@ -10,7 +10,7 @@
         }
         else {
             layer.open({
-                content: '请先登录',
+                content: 'Please Log In First',
                 style: BookDetail.msgStyle,
                 time: 2
             });
@@ -19,51 +19,39 @@
     startSupport: function () {
         var rStr = '<a class="closePopup" href="javascript:void(0);" onclick="javascript:uFans.closeBox();"></a>';
         rStr += '<div class="popupTit">';
-        rStr += '	<h3>我要捧场作品</h3>';
+        rStr += '	<h3>I want to support this novel</h3>';
         rStr += '</div>';
         rStr += '<div class="propsList cf">';
         rStr += '	<ul>';
         rStr += '		<li vals="100">';
         rStr += '			<a class="propWrap" href="javascript:void(0);">';
         rStr += '				<i class="icon_check"></i>';
-        rStr += '				<span class="propsBox">100屋币</span>';
+        rStr += '				<span class="propsBox">100 PI Coin</span>';
         rStr += '			</a>';
         rStr += '		</li>';
         rStr += '		<li class="on"  vals="500">';
         rStr += '			<a class="propWrap" href="javascript:void(0);">';
         rStr += '				<i class="icon_check"></i>';
-        rStr += '				<span class="propsBox">500屋币</span>';
+        rStr += '				<span class="propsBox">500 PI Coin</span>';
         rStr += '			</a>';
         rStr += '		</li>';
         rStr += '		<li vals="2000">';
         rStr += '			<a class="propWrap" href="javascript:void(0);">';
         rStr += '				<i class="icon_check"></i>';
-        rStr += '				<span class="propsBox">2000屋币</span>';
+        rStr += '				<span class="propsBox">2000 PI Coin</span>';
         rStr += '			</a>';
         rStr += '		</li>';
         rStr += '		<li vals="5000">';
         rStr += '			<a class="propWrap" href="javascript:void(0);">';
         rStr += '				<i class="icon_check"></i>';
-        rStr += '				<span class="propsBox">5000屋币</span>';
-        rStr += '			</a>';
-        rStr += '		</li>';
-        rStr += '		<li vals="10000">';
-        rStr += '			<a class="propWrap" href="javascript:void(0);">';
-        rStr += '				<i class="icon_check"></i>';
-        rStr += '				<span class="propsBox">10000屋币</span>';
-        rStr += '			</a>';
-        rStr += '		</li>';
-        rStr += '		<li vals="100000">';
-        rStr += '			<a class="propWrap" href="javascript:void(0);">';
-        rStr += '				<i class="icon_check"></i>';
-        rStr += '				<span class="propsBox">100000屋币</span>';
+        rStr += '				<span class="propsBox">5000 PI Coin</span>';
         rStr += '			</a>';
         rStr += '		</li>';
         rStr += '	</ul>';
         rStr += '</div>';
-        rStr += '<p class="have_num">当前剩余<span class="red">' + spmymoney + '</span>屋币&nbsp;&nbsp;本次捧场<span class="red" id="pcTotal">500</span>屋币<a class="red" href="../pay/" >[充值]</a></p>';
-        rStr += '<p><textarea class="popup_text" id="sendSupportNote"   placeholder="感谢您的捧场，留句话鼓励作者吧！"></textarea></p>';
-        rStr += '<p class="tc"><a class="btn_red btn_send_pc" href="javascript:void(0);" onclick="javascript:uFans.SendSupport();">立即捧场</a></p>';
+        rStr += '<p class="have_num">Current <span class="red">' + spmymoney + '</span> PI Coin&nbsp;&nbsp; Support<span class="red" id="pcTotal">500</span> PI Coin<a class="red" href="../pay/" >[Buy Coin]</a></p>';
+        rStr += '<p><textarea class="popup_text" id="sendSupportNote"   placeholder="Thank you for your support, leave a sentence to encourage the author"></textarea></p>';
+        rStr += '<p class="tc"><a class="btn_red btn_send_pc" href="javascript:void(0);" onclick="javascript:uFans.SendSupport();">Support Now</a></p>';
         $("#showPC").html(rStr);
         $("#showPC").show();
         $(".maskBox").show();
@@ -85,16 +73,15 @@
             var clearSendNote = sendNote.replace(/[\ |\~|\`|\!|\@|\#|\$|\%|\^|\&|\*|\(|\)|\-|\_|\+|\=|\||\\|\[|\]|\{|\}|\;|\:|\"|\'|\,|\<|\.|\>|\/|\?]/g, "");
             if (sendNote == "") {
                 layer.open({
-                    content: '感谢您的捧场，留句话鼓励作者吧！',
+                    content: 'Thank you for your support, leave a sentence to encourage the author',
                     style: BookDetail.msgStyle,
                     time: 2
                 });
                 return;
             }
-            if (clearSendNote.length<5)
-            {
+            if (clearSendNote.length < 20) {
                 layer.open({
-                    content: '评论最少5个字符！',
+                    content: 'Comment must be at least 20 characters',
                     style: BookDetail.msgStyle,
                     time: 2
                 });
@@ -105,7 +92,7 @@
             }
             else {
                 layer.open({
-                    content: '屋币余额不足',
+                    content: 'PI Coin is insufficient',
                     style: BookDetail.msgStyle,
                     time: 2
                 });
@@ -113,7 +100,7 @@
         }
         else {
             layer.open({
-                content: '请先登录',
+                content: 'Please Log In',
                 style: BookDetail.msgStyle,
                 time: 2
             });
@@ -128,16 +115,16 @@
         $(".maskBox").show();
         var rStr = '<a class="closePopup" href="javascript:void(0);" onclick="javascript:uFans.closeBox();"></a>';
         rStr += '<div class="popupTit">';
-        rStr += '	<h3>消息提示</h3>';
+        rStr += '	<h3>Message Prompt</h3>';
         rStr += '</div>';
         if (noteClass == 'pc') {
-            rStr += '<div class="tipWrap suc_txt_pc">捧场作品成功！</div>';
+            rStr += '<div class="tipWrap suc_txt_pc">Successfully Supported!</div>';
         }
         else {
-            rStr += '<div class="tipWrap suc_txt_flw">点赞作品成功！</div>';
+            rStr += '<div class="tipWrap suc_txt_flw">Successfully Liked!</div>';
         }
         rStr += '<div class="tc">';
-        rStr += '	<a href="javascript:void(0);" class="btn_red btn_sure"  onclick="javascript:uFans.closeBox();">确定</a>';
+        rStr += '	<a href="javascript:void(0);" class="btn_red btn_sure"  onclick="javascript:uFans.closeBox();">Confirm</a>';
         rStr += '</div>';
         $("#showNote").html(rStr);
         $("#showNote").show();

@@ -8,28 +8,28 @@
     DescriptionMore: function (sClass) {
         if (sClass == "") {
             if ($("#pDesMore").html().length > 150) {
-                $("#divDescription").html($("#pDesMore").html().substring(0, 150) + "<a href=\"javascript:void(0);\" class=\"info_txt_more\" onclick=\"javascript:BookDetail.DescriptionMore('down');\">展开<img src=\"../images/arrow_d.png\" /></a>");
+                $("#divDescription").html($("#pDesMore").html().substring(0, 150) + "<a href=\"javascript:void(0);\" class=\"info_txt_more\" onclick=\"javascript:BookDetail.DescriptionMore('down');\">Unfold<img src=\"../images/arrow_d.png\" /></a>");
             } else {
                 $("#divDescription").html($("#pDesMore").html());
             }
         } else {
-            $("#divDescription").html($("#pDesMore").html() + "<a href=\"javascript:void(0);\"  class=\"info_txt_more\"  onclick=\"javascript:BookDetail.DescriptionMore('');\">收起<img src=\"../images/arrow_t.png\" /></a>");
+            $("#divDescription").html($("#pDesMore").html() + "<a href=\"javascript:void(0);\"  class=\"info_txt_more\"  onclick=\"javascript:BookDetail.DescriptionMore('');\">Fold<img src=\"../images/arrow_t.png\" /></a>");
         }
     },
     AddFavorites: function (BId, CId, layerStatus) {
         $.ajax({
             type: "POST",
             url: "/user/addToBookShelf",
-            data: {'bookId': $("#bookId").val(), 'preContentId': $("#preContentId").val()},
+            data: { 'bookId': $("#bookId").val(), 'preContentId': $("#preContentId").val() },
             dataType: "json",
             success: function (data) {
                 if (data.code == 200) {
                     if (layerStatus == 1) {
-                        $("#cFavs").html("<a class=\"ico_shelf\" href=\"javascript:void(0);\"><b>已收藏</b></a>");
+                        $("#cFavs").html("<a class=\"ico_shelf\" href=\"javascript:void(0);\"><b>Already Favorited</b></a>");
                         jQuery.cookie("u-faorites", "1");
                     }
                     else {
-                        $("#cFavs").html("<a class=\"btn_ora_white btn_addsj\" href=\"javascript:void(0);\">已在书架</a>");
+                        $("#cFavs").html("<a class=\"btn_ora_white btn_addsj\" href=\"javascript:void(0);\">Already in the Bookshelf</a>");
                     }
 
 
@@ -43,7 +43,7 @@
 
             },
             error: function () {
-                layer.alert('网络异常');
+                layer.alert('Network Exception');
             }
         })
     },
@@ -51,7 +51,7 @@
         if (jQuery.cookie("u-faorites") == null) {
         } else {
             if (jQuery.cookie("u-faorites") == "1") {
-                $("#cFavs").html("<a class=\"ico_shelf\" href=\"javascript:void(0);\"><b>已加书架</b></a>");
+                $("#cFavs").html("<a class=\"ico_shelf\" href=\"javascript:void(0);\"><b>Already in the Bookshelf</b></a>");
             }
         }
         /*BookDetail.SetWholeTip();*/
@@ -64,59 +64,59 @@
         if (mTotal != undefined) {
             var iTotal = parseInt(mTotal);
             if (iTotal < 500) {
-                return ["user_level1", "见习"];
+                return ["user_level1", "Intern"];
             } else if (iTotal < 2000) {
-                return ["user_level2", "学徒"];
+                return ["user_level2", "Apprentice"];
             } else if (iTotal < 5000) {
-                return ["user_level3", "弟子"];
+                return ["user_level3", "Senior Apprentice"];
             } else if (iTotal < 10000) {
-                return ["user_level4", "执事"];
+                return ["user_level4", "Disciple"];
             } else if (iTotal < 20000) {
-                return ["user_level5", "舵主"];
+                return ["user_level5", "Head of Sect"];
             } else if (iTotal < 30000) {
-                return ["user_level6", "堂主"];
+                return ["user_level6", "Hall Master"];
             } else if (iTotal < 40000) {
-                return ["user_level7", "护法"];
+                return ["user_level7", "Guardian Elder"];
             } else if (iTotal < 50000) {
-                return ["user_level8", "长老"];
+                return ["user_level8", "Elder"];
             } else if (iTotal < 70000) {
-                return ["user_level9", "掌门"];
+                return ["user_level9", "Leader"];
             } else if (iTotal < 100000) {
-                return ["user_level10", "宗师"];
+                return ["user_level10", "Master"];
             } else {
-                return ["user_level11", "盟主"];
+                return ["user_level11", "Alliance Leader"];
             }
         } else {
-            return ["user_level1", "见习"];
+            return ["user_level1", "Intern"];
         }
     },
     SaveComment: function (cmtBId, cmtCId, cmtDetail) {
-        if(!isLogin){
-            layer.alert('请先登陆');
+        if (!isLogin) {
+            layer.alert('Please Log In First');
             return;
         }
         var cmtDetailTemp = cmtDetail.replace(/(^\s*)/g, "");
         if (cmtDetailTemp == '') {
-            layer.alert('评论内容必须填写');
+            layer.alert('Comment content cannot be empty');
             return;
         }
         if (cmtDetailTemp.length < 5) {
-            layer.alert('评论内容必须大于5个字');
+            layer.alert('Comment content must be more than 20 characters');
             return;
         }
         if (cmtDetail.length < 5) {
-            layer.alert('评论内容必须大于5个字');
+            layer.alert('Comment content must be more than 20 characters');
             return;
         }
         $.ajax({
             type: "POST",
             url: "/book/addBookComment",
-            data: {'bookId': $("#bookId").val(), 'commentContent': cmtDetail},
+            data: { 'bookId': $("#bookId").val(), 'commentContent': cmtDetail },
             dataType: "json",
             success: function (data) {
                 if (data.code == 200) {
                     $('#txtComment').val("")
-                    layer.alert('评价成功！');
+                    layer.alert('Comment successful!');
                     loadCommentList();
 
                 } else if (data.code == 1001) {
@@ -129,7 +129,7 @@
 
             },
             error: function () {
-                layer.alert('网络异常');
+                layer.alert('Network Exception');
             }
         })
 
@@ -187,7 +187,7 @@
         localStorage.setItem("fonts", fonts);
         $(".readBox").css("font-size", fonts + "px");
         $("#cFonts").html(fonts);
-        $("#ChapterBody").attr("class","article-content font"+fonts);
+        $("#ChapterBody").attr("class", "article-content font" + fonts);
         BookDetail.reShowCover();
     },
     SetBackUpColor: function (colorNum) {
@@ -264,7 +264,7 @@
         } else {
             strHistory = 'b' + bid + '|' + cid + '|' + crank + ',';
         }
-        jQuery.cookie("wapviewhistory", strHistory, {path: '/', domain: BookDetail.wepDomain, expires: 365});
+        jQuery.cookie("wapviewhistory", strHistory, { path: '/', domain: BookDetail.wepDomain, expires: 365 });
     },
     formatDate: function (now, types) {
         if (now != null && now != "") {
@@ -287,9 +287,9 @@
         }
     },
     SetWholeTip: function () {
-        var str = '<li>1、此书为全网优质作品，按照整本定价折扣销售，购买之后可以阅读该书全部章节。</li>';
-        str += '<li>2、支付屋币即可阅读收费章节，没有屋币的需要先充值。</li>';
-        str += '<li>3、QQ、微信、微博3种账号之间的数据不互通，如果你发现充值成功但没有屋币到账，请切换账号查看是否充到了别的账号中。</li>';
+        var str = '<li>1. This book is a high-quality work on the entire network, sold at a discounted price according to the full book pricing. After purchase, you can read all chapters of the book.</li>';
+        str += '<li>2. Paying with PI Coin allows you to read premium chapters. If you do not have PI Coin, you need to recharge first.</li>';
+        str += '<li>3. If you find that the recharge is successful but the PI Coin is not credited, please contact customer service.</li>';
         if ($("#HidIsWholeBook").val() == "1") {
             $(".tip_list").html(str);
         }

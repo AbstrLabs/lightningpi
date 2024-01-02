@@ -1,5 +1,7 @@
 @charset "utf-8";
-.items_txt .author a, .updateTable .author a {
+
+.items_txt .author a,
+.updateTable .author a {
     cursor: text
 }
 
@@ -16,37 +18,47 @@
 
 /*.leftBox, .rightBox, .rightBox2 { margin-bottom: 14px }
 .channelBanner .leftBox, .channelBanner .rightBox { height: 334px; overflow: hidden }*/
-.channelPic .leftBox, .channelPic .rightBox { /*height: 515px; */
+.channelPic .leftBox,
+.channelPic .rightBox {
+    /*height: 515px; */
     overflow: hidden
 }
 
-.channelTable .leftBox { /*height: 1046px;*/
+.channelTable .leftBox {
+    /*height: 1046px;*/
     overflow: hidden
 }
 
-.scBigImg img, .rightList li.on .cover img, .itemsList .items_img img {
+.scBigImg img,
+.rightList li.on .cover img,
+.itemsList .items_img img {
     box-shadow: 0 0 1px rgba(0, 0, 0, .05)
 }
 
-.scBigImg:hover img, .rightList li.on .cover a:hover img, .itemsList .items_img:hover img {
+.scBigImg:hover img,
+.rightList li.on .cover a:hover img,
+.itemsList .items_img:hover img {
     box-shadow: 0 0 1px rgb(0, 0, 0, .25)
 }
 
 .leftBox {
     width: 720px;
-    float: left; /*border: 1px solid #EAEAEA*/
+    float: left;
+    /*border: 1px solid #EAEAEA*/
 }
 
 .sliderContent {
     width: 306px;
-    float: left; /*margin: 16px 0 16px 14px;*/
+    float: left;
+    /*margin: 16px 0 16px 14px;*/
     position: relative
 }
 
 .scSmallImg {
     position: absolute;
     top: 0px;
-    right: 0px; /*height: 335px*/
+    right: 0px;
+    /*height: 335px*/
 }
 
 .scSmallImg li {
@@ -103,7 +115,8 @@
     margin-bottom: 12px;
 }
 
-.hot_articles dt { /*height: 40px; line-height: 40px;*/
+.hot_articles dt {
+    /*height: 40px; line-height: 40px;*/
     padding-bottom: 7px;
     text-align: center;
     font-size: 16px;
@@ -153,20 +166,25 @@
 
 .rightBox {
     width: 240px;
-    float: right; /*border: 1px solid #EAEAEA;*/
+    float: right;
+    /*border: 1px solid #EAEAEA;*/
     position: relative
 }
 
-.rightBox .title, .wrap_right_cont .title { /*height: 48px; margin: 0 14px;*/
+.rightBox .title,
+.wrap_right_cont .title {
+    /*height: 48px; margin: 0 14px;*/
     border-bottom: 1px solid #e0e0e0
 }
 
-.rightBox .title h3, .wrap_right_cont .title h3 {
+.rightBox .title h3,
+.wrap_right_cont .title h3 {
     line-height: 1;
     padding-bottom: 14px;
     display: inline-block;
     font-size: 20px;
-    font-weight: 600; /*border-bottom: 4px solid transparent*/
+    font-weight: 600;
+    /*border-bottom: 4px solid transparent*/
 }
 
 /*.rightBox .title h3.on { border-color: #3eaf7c }*/
@@ -174,7 +192,8 @@
     padding: 0
 }
 
-.rightList li { /*border-bottom: 1px dotted #e0e0e0; height: 37px; line-height: 37px;*/
+.rightList li {
+    /*border-bottom: 1px dotted #e0e0e0; height: 37px; line-height: 37px;*/
     overflow: hidden;
     position: relative;
     vertical-align: middle
@@ -204,7 +223,8 @@
     display: none
 }
 
-.rightList .cover, .rightList .book_intro .txt {
+.rightList .cover,
+.rightList .book_intro .txt {
     display: none
 }
 
@@ -267,7 +287,8 @@
     display: block
 }
 
-.rightList li i, .rankTable .rank i {
+.rightList li i,
+.rankTable .rank i {
     width: 17px;
     height: 17px;
     line-height: 17px;
@@ -289,19 +310,24 @@
 }
 
 /*.rightList li.on i { position: absolute; top: 12px; left: 0; margin: 0; display:none }*/
-.rightList li.num1 i, .rankTable .rank .num1 {
+.rightList li.num1 i,
+.rankTable .rank .num1 {
     background-color: #3eaf7c
 }
 
-.rightList li.num2 i, .rankTable .rank .num2 {
+.rightList li.num2 i,
+.rankTable .rank .num2 {
     background-color: #65bf96
 }
 
-.rightList li.num3 i, .rankTable .rank .num3 {
+.rightList li.num3 i,
+.rankTable .rank .num3 {
     background-color: #78c7a3
 }
 
-.rightList li.num1 i, .rightList li.num2 i, .rightList li.num3 i {
+.rightList li.num1 i,
+.rightList li.num2 i,
+.rightList li.num3 i {
     display: block
 }
 
@@ -316,7 +342,8 @@
     padding-bottom: 14px;
     display: inline-block;
     font-size: 20px;
-    font-weight: 600; /*border-bottom: 4px solid transparent*/
+    font-weight: 600;
+    /*border-bottom: 4px solid transparent*/
 }
 
 .picRecommend {
@@ -343,7 +370,8 @@
 
 .items_txt {
     width: 230px;
-    float: left; /*padding-right: 20px;*/
+    float: left;
+    /*padding-right: 20px;*/
 }
 
 .items_txt h4 {
@@ -392,7 +420,8 @@
     margin-bottom: 14px;
 }
 
-.updateTable th, .updateTable td {
+.updateTable th,
+.updateTable td {
     height: 41px;
     line-height: 41px;
     vertical-align: middle;
@@ -420,7 +449,8 @@
     font-size: 14px;
 }
 
-.updateTable .name a, .updateTable .chapter a {
+.updateTable .name a,
+.updateTable .chapter a {
     max-width: 168px;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -460,7 +490,9 @@
     text-align: center
 }
 
-.updateTable .name a, .updateTable .chapter a, .updateTable .author a {
+.updateTable .name a,
+.updateTable .chapter a,
+.updateTable .author a {
     height: 41px;
     line-height: 41px;
     display: inline-block;
@@ -474,7 +506,8 @@
 
 .rankTable th {
     background: #f9f9f9;
-    color: #333
+    color: #333;
+    width: 100%;
 }
 
 .rankTable td {
@@ -513,7 +546,8 @@
     width: 250px;
 }
 
-.classTable .name a, .classTable .chapter a {
+.classTable .name a,
+.classTable .chapter a {
     max-width: 90%
 }
 
@@ -549,7 +583,8 @@
 }
 
 .rightList2 li a {
-    display: block; /*padding: 0 30px;*/
+    display: block;
+    /*padding: 0 30px;*/
     height: 47px;
     line-height: 47px;
     font-size: 16px;
@@ -561,24 +596,28 @@
     border: none
 }
 
-.rightList2 li a.on, .rightList2 li a:hover {
+.rightList2 li a.on,
+.rightList2 li a:hover {
     color: #3eaf7c
 }
 
-.so_tag { /*padding: 4px 14px 0;*/
+.so_tag {
+    /*padding: 4px 14px 0;*/
     font-size: 14px;
     padding: 5px 0
 }
 
 .so_tag li {
-    padding: 0 0 24px; /*border-bottom: 1px solid #eee*/
+    padding: 0 0 24px;
+    /*border-bottom: 1px solid #eee*/
 }
 
 .so_tag li:last-child {
     padding: 0 0 4px
 }
 
-.so_tag li .tit, .so_tag li a {
+.so_tag li .tit,
+.so_tag li a {
     line-height: 1;
     padding: 3px 7px;
     margin-right: 12px
@@ -588,7 +627,8 @@
     color: #999
 }
 
-.so_tag li a.on, .so_tag li a:hover {
+.so_tag li a.on,
+.so_tag li a:hover {
     color: #3eaf7c
 }
 
@@ -597,7 +637,8 @@
 }
 
 .so_tag li .so_boy {
-    display: inline-block /*; margin: 8px 0 0 140px;*/
+    display: inline-block
+        /*; margin: 8px 0 0 140px;*/
 }
 
 /*.payBox { width: 998px; border: 1px solid #eaeaea }*/
@@ -876,7 +917,8 @@
 }
 
 /*.book_info .intro_txt p { text-indent:2em }*/
-.icon_show, .icon_hide {
+.icon_show,
+.icon_hide {
     display: inline-block;
     color: #2972cc;
     height: 24px;
@@ -890,7 +932,8 @@
     background: #fff
 }
 
-.icon_show i, .icon_hide i {
+.icon_show i,
+.icon_hide i {
     display: inline-block;
     width: 12px;
     height: 12px;
@@ -907,11 +950,14 @@
     display: none
 }
 
-.btns .btn_red, .btns .btn_ora, .btns .btn_addsj {
+.btns .btn_red,
+.btns .btn_ora,
+.btns .btn_addsj {
     margin-right: 24px
 }
 
-.book_tit { /*height: 48px; line-height: 48px; margin: 0 14px;*/
+.book_tit {
+    /*height: 48px; line-height: 48px; margin: 0 14px;*/
     border-bottom: 1px solid #eee;
     overflow: hidden;
     padding-bottom: 14px;
@@ -962,7 +1008,8 @@
     border: none
 }
 
-.comment_list .user_heads { /*width: 54px; height: 54px; float: left;*/
+.comment_list .user_heads {
+    /*width: 54px; height: 54px; float: left;*/
     position: relative;
     margin-right: 20px
 }
@@ -1141,7 +1188,8 @@
     text-align: center
 }
 
-.page_bar li a, .page_bar li .select_page {
+.page_bar li a,
+.page_bar li .select_page {
     display: block;
     height: 2rem;
     line-height: 2rem;
@@ -1163,7 +1211,8 @@
     width: 100%
 }
 
-.icon_jh, .icon_zd {
+.icon_jh,
+.icon_zd {
     text-align: center;
     margin: 2px 5px 0 0;
     color: #fff;
@@ -1180,15 +1229,24 @@
 }
 
 
-.hot_notice span, .items_txt .intro a, .updateTable .author a, .updateTable .style a, .updateTable .time a, .updateTable th {
+.hot_notice span,
+.items_txt .intro a,
+.updateTable .author a,
+.updateTable .style a,
+.updateTable .time a,
+.updateTable th {
     color: #888
 }
 
-.items_txt .intro a:hover, .rightList .more a:hover, .updateTable .style a:hover, .rightList .on .book_intro .txt:hover {
+.items_txt .intro a:hover,
+.rightList .more a:hover,
+.updateTable .style a:hover,
+.rightList .on .book_intro .txt:hover {
     color: #3eaf7c
 }
 
-.icon_show:hover, .icon_hide:hover {
+.icon_show:hover,
+.icon_hide:hover {
     color: #2972cc
 }
 

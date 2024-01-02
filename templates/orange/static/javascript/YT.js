@@ -1,8 +1,6 @@
 var $C = function (objName) {
-    if (typeof (document.getElementById(objName)) != "object")
-    { return null; }
-    else
-    { return document.getElementById(objName); }
+    if (typeof (document.getElementById(objName)) != "object") { return null; }
+    else { return document.getElementById(objName); }
 }
 var YT = {
     BaseCommon: {
@@ -30,7 +28,7 @@ var YT = {
         LoadShow: function () {
             if ($C("LayerShowPic") == null) {
                 var sp = document.createElement("div");
-                sp.innerHTML = "<div id=\"LayerShowPic\" style=\"position:absolute;width:180px;height:70px;z-index:100;background-color: #fdfce9;border: 1px solid #666666;font-size:12px;\"><div align=\"center\" style=\"z-index:91;\"><br><img src=\"" + YT.BaseData.WaitImg + "\" align=\"absmiddle\" /> 请稍后…</div></div><iframe id=\"LayerCover\" style=\"position:absolute;width:100%;height:100%;z-index:10;left: 0px;top: 0px;background-color:#eeeeee;FILTER: alpha(opacity=1);opacity: 0.3 !important; \"></iframe>";
+                sp.innerHTML = "<div id=\"LayerShowPic\" style=\"position:absolute;width:180px;height:70px;z-index:100;background-color: #fdfce9;border: 1px solid #666666;font-size:12px;\"><div align=\"center\" style=\"z-index:91;\"><br><img src=\"" + YT.BaseData.WaitImg + "\" align=\"absmiddle\" /> Loading...</div></div><iframe id=\"LayerCover\" style=\"position:absolute;width:100%;height:100%;z-index:10;left: 0px;top: 0px;background-color:#eeeeee;FILTER: alpha(opacity=1);opacity: 0.3 !important; \"></iframe>";
                 document.body.appendChild(sp);
             }
             $C("LayerShowPic").style.display = '';
@@ -71,8 +69,7 @@ var YT = {
             if (typeof (height) == 'undefind' || height == null) { height = 550; }
             var fits = false;
             if (typeof (needFits) != "undefined" && needFits) {
-                if (document.body.clientWidth < 650 || document.body.clientHeight < 450 || document.body.clientHeight - 50 < height)
-                { fits = true; }
+                if (document.body.clientWidth < 650 || document.body.clientHeight < 450 || document.body.clientHeight - 50 < height) { fits = true; }
             }
             if ($C("YT_Panel") == null) {
                 var sp = document.createElement("div");
@@ -197,16 +194,16 @@ var YT = {
                 var year = dateN.getFullYear();
                 var month = dateN.getMonth() + 1;
                 if (month == 1) {
-                    return year + "年第1季度";
+                    return year + " for Q1";
                 }
                 else if (month == 4) {
-                    return year + "年第2季度";
+                    return year + " for Q2";
                 }
                 else if (month == 7) {
-                    return year + "年第三季度";
+                    return year + "for Q3";
                 }
                 else {
-                    return year + "年第四季度";
+                    return year + " for Q4";
                 }
             }
             else {
@@ -216,10 +213,10 @@ var YT = {
 
         formatStatus: function (id) {
             if (id == 0) {
-                return "无效";
+                return "Invalid";
             }
             else {
-                return "有效";
+                return "Valid";
             }
         },
         ShowPanel: function (obj, divName, xlong, ylong) {
@@ -228,19 +225,15 @@ var YT = {
                 if (showobj.style.display == 'none') {
                     showobj.style.display = '';
                 }
-                if (xlong)
-                { showobj.style.top = YT.BaseCommon.gT(obj) + 20 + xlong + "px"; }
-                else
-                { showobj.style.top = YT.BaseCommon.gT(obj) + 20 + "px"; }
-                if (ylong)
-                { showobj.style.left = YT.BaseCommon.gL(obj) + ylong + "px"; }
-                else
-                { showobj.style.left = YT.BaseCommon.gL(obj) + "px"; }
+                if (xlong) { showobj.style.top = YT.BaseCommon.gT(obj) + 20 + xlong + "px"; }
+                else { showobj.style.top = YT.BaseCommon.gT(obj) + 20 + "px"; }
+                if (ylong) { showobj.style.left = YT.BaseCommon.gL(obj) + ylong + "px"; }
+                else { showobj.style.left = YT.BaseCommon.gL(obj) + "px"; }
             }
         },
-        GetDateDiff:function(startTime,endTime, diffType) {
+        GetDateDiff: function (startTime, endTime, diffType) {
             startTime = startTime.replace(/\-/g, "/");
-            endTime= endTime.replace(/\-/g, "/");
+            endTime = endTime.replace(/\-/g, "/");
             diffType = diffType.toLowerCase();
             var sTime = new Date(startTime);
             var eTime = new Date(endTime);
@@ -277,7 +270,7 @@ var YT = {
                     }
                 }
                 if (needBlock) {
-                    obj.options.add(new Option("请选择", "0"));
+                    obj.options.add(new Option("Please select ", "0"));
                     obj.value = "";
                 }
             }
@@ -347,26 +340,26 @@ $.extend($.fn.validatebox.defaults.rules, {
             else {
                 return reg.test(value);
             }
-        }, message: '手机号码有误'
+        }, message: 'Wrong Phone Number'
     },
     chinaName: {/*中文名称*/
         validator: function (value, param) {
-            //            var reg = /^[\u4e00-\u9fa5a-zA-Z0-9]{2,6}$/;
+            //            var reg = /^[\u4e00-\u9fa5a-zA-Z0-9]{2,20}$/;
             var reg = /^[a-zA-Z\u4e00-\u9fa5][a-zA-Z0-9\u4e00-\u9fa5]{1,5}$/;
             //            var reg = /^[\u4e00-\u9fa5,a-zA-Z0-9]{2,5}$/;
             return reg.test(value);
-        }, message: '在笔名中数字不能开头,且昵称的长度应在2-6之间'
+        }, message: 'In the pen name, numbers cannot start, and the length of the nickname should be between 2 and 20'
     },
     realName: {/*真实姓名*/
         validator: function (value, param) {
             //            var reg = /^[a-zA-Z\u4e00-\u9fa5][a-zA-Z0-9\u4e00-\u9fa5]{1,5}$/;
             var reg = /^[\u4e00-\u9fa5,a-zA-Z0-9]{2,5}$/;
             return reg.test(value);
-        }, message: '真实姓名的长度为2-5位中文字符'
+        }, message: 'Only Adminstrater will see this'
     },
     maxLength: {
         validator: function (value, param) {
-            $.fn.validatebox.defaults.rules.maxLength.message = '只能少于' + param + '字符串';
+            $.fn.validatebox.defaults.rules.maxLength.message = 'Only less than ' + param + ' strings';
             return value.length < param;
         }
     },
@@ -374,19 +367,19 @@ $.extend($.fn.validatebox.defaults.rules, {
         validator: function (value, param) {
             var reg = /^(-|[0-9])(|\d{1,9})$/;
             return reg.test(value);
-        }, message: '必须是数字'
+        }, message: 'Must be numbers'
     },
     isBankNumber: {
         validator: function (value, param) {
             var reg = /^([0-9]{16}|[0-9]{19})$/;
             return reg.test(value);
-        }, message: '银行卡号错误'
+        }, message: 'Bank card number error'
     },
     isEmail: {
         validator: function (value, param) {
             var reg = /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+((\.[a-zA-Z0-9_-]{2,3}){1,2})$/;
             return reg.test(value);
-        }, message: '邮箱格式错误'
+        }, message: 'Email format error'
     },
 
     isPosInt: {
@@ -398,7 +391,7 @@ $.extend($.fn.validatebox.defaults.rules, {
             else {
                 return false;
             }
-        }, message: '必须是大于0的正整数'
+        }, message: 'Must be a positive integer greater than 0'
     },
     isPosIntTen: {
         validator: function (value, param) {
@@ -409,7 +402,7 @@ $.extend($.fn.validatebox.defaults.rules, {
             else {
                 return false;
             }
-        }, message: '必须是大于10的正整数'
+        }, message: 'Must be a positive integer greater than 10'
     },
     isDate: {
         validator: function (value, param) {
@@ -417,53 +410,53 @@ $.extend($.fn.validatebox.defaults.rules, {
             return reg.test(value);
         }, message: 'yyyy-MM-dd'
     },
-    isIdCard: {
-        validator: function (value, param) {
-            var reg = /^(^\d{15}$|^\d{18}$|^\d{17}(\d|X|x))$/;
-            return isCardID(value);
-        }, message: '身份证号码错误'
-    },
+    // isIdCard: {
+    //     validator: function (value, param) {
+    //         var reg = /^(^\d{15}$|^\d{18}$|^\d{17}(\d|X|x))$/;
+    //         return isCardID(value);
+    //     }, message: 'ID card number error/'
+    // },
     isFloat: {
         validator: function (value, param) {
             var reg = /^(^\+?[1-9][0-9]*$)$|^(\d{1,9}\.\d{1,9})$/;
             return reg.test(value);
-        }, message: '必须是大于零的数字'
+        }, message: 'Must be a positive integer greater than 0'
     },
     isFloatMin0:
-        {
-            validator: function (value, param) {
-                var reg = /^(^\d{1,9})$|^(\d{1,9}\.\d{1,9})$/;
-                return reg.test(value);
-            }, message: '必须是大于零的数字'
-        },
+    {
+        validator: function (value, param) {
+            var reg = /^(^\d{1,9})$|^(\d{1,9}\.\d{1,9})$/;
+            return reg.test(value);
+        }, message: 'Must be a positive integer greater than 0'
+    },
     isPassWord: {
         validator: function (value, param) {
             var reg = /^[a-zA-Z0-9_]{5,15}$/;
             return reg.test(value);
-        }, message: '密码格式错误'
+        }, message: 'Password format error'
     },
     isConfirmPassword: {
         validator: function (value, param) {
             return $(param[0]).val() == value;
-        }, message: '两次录入的密码不同'
+        }, message: 'The two entered passwords are inconsistent'
     },
     phoneCheck: {
         validator: function (value, param) {
             var reg = /^(((\()?\d{2,4}(\))?[-(\s)*]){0,2})?(\d{8})$/;
             return reg.test(value);
-        }, message: '输入的电话不正确'
+        }, message: 'The entered phone number is incorrect'
     },
     isUserName: {
         validator: function (value, param) {
             var reg = /^[a-zA-Z0-9_]{3,15}$/;
             return reg.test(value);
-        }, message: '用户名格式错误'
+        }, message: 'Username format error'
     },
     equalTo: {
         validator: function (value, param) {
             return $(param[0]).val() == value;
         },
-        message: '字段不匹配'
+        message: 'Field mismatch'
     }
 });
 
@@ -472,20 +465,20 @@ function CreateGrid() { }
 function CreateGridReload() { }
 
 /*身份证校验正确性*/
-var NumbCardCity = { 11: "北京", 12: "天津", 13: "河北", 14: "山西", 15: "内蒙古", 21: "辽宁", 22: "吉林", 23: "黑龙江", 31: "上海", 32: "江苏", 33: "浙江", 34: "安徽", 35: "福建", 36: "江西", 37: "山东", 41: "河南", 42: "湖北", 43: "湖南", 44: "广东", 45: "广西", 46: "海南", 50: "重庆", 51: "四川", 52: "贵州", 53: "云南", 54: "西藏", 61: "陕西", 62: "甘肃", 63: "青海", 64: "宁夏", 65: "新疆", 71: "台湾", 81: "香港", 82: "澳门", 91: "国外" };
-function isCardID(sId) {
-    var iSum = 0;
-    var info = "";
-    if (!/^\d{17}(\d|x)$/i.test(sId)) return false; /* "你输入的身份证长度或格式错误";  */
-    sId = sId.replace(/x$/i, "a");
-    if (NumbCardCity[parseInt(sId.substr(0, 2))] == null) return false; /*"你的身份证地区非法";*/
-    sBirthday = sId.substr(6, 4) + "-" + Number(sId.substr(10, 2)) + "-" + Number(sId.substr(12, 2));
-    var d = new Date(sBirthday.replace(/-/g, "/"));
-    if (sBirthday != (d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + d.getDate())) return false; /* "身份证上的出生日期非法";*/
-    for (var i = 17; i >= 0; i--) iSum += (Math.pow(2, i) % 11) * parseInt(sId.charAt(17 - i), 11);
-    if (iSum % 11 != 1) return false; /*"你输入的身份证号非法";*/
-    return true;
-}
+// var NumbCardCity = { 11: "北京", 12: "天津", 13: "河北", 14: "山西", 15: "内蒙古", 21: "辽宁", 22: "吉林", 23: "黑龙江", 31: "上海", 32: "江苏", 33: "浙江", 34: "安徽", 35: "福建", 36: "江西", 37: "山东", 41: "河南", 42: "湖北", 43: "湖南", 44: "广东", 45: "广西", 46: "海南", 50: "重庆", 51: "四川", 52: "贵州", 53: "云南", 54: "西藏", 61: "陕西", 62: "甘肃", 63: "青海", 64: "宁夏", 65: "新疆", 71: "台湾", 81: "香港", 82: "澳门", 91: "国外" };
+// function isCardID(sId) {
+//     var iSum = 0;
+//     var info = "";
+//     if (!/^\d{17}(\d|x)$/i.test(sId)) return false; /* "你输入的身份证长度或格式错误";  */
+//     sId = sId.replace(/x$/i, "a");
+//     if (NumbCardCity[parseInt(sId.substr(0, 2))] == null) return false; /*"你的身份证地区非法";*/
+//     sBirthday = sId.substr(6, 4) + "-" + Number(sId.substr(10, 2)) + "-" + Number(sId.substr(12, 2));
+//     var d = new Date(sBirthday.replace(/-/g, "/"));
+//     if (sBirthday != (d.getFullYear() + "-" + (d.getMonth() + 1) + "-" + d.getDate())) return false; /* "身份证上的出生日期非法";*/
+//     for (var i = 17; i >= 0; i--) iSum += (Math.pow(2, i) % 11) * parseInt(sId.charAt(17 - i), 11);
+//     if (iSum % 11 != 1) return false; /*"你输入的身份证号非法";*/
+//     return true;
+// }
 
 function getSex(val) {
     if (parseInt(val.charAt(16) / 2) * 2 != val.charAt(16))
@@ -504,29 +497,29 @@ function showBirthday(val) {
 
 
 var DirtInfo = {
-    TrueOrFalse: [[0, "否"], [1, "是"]],
-    EnumUserCommendStatus: [[0, "新"], [1, "已处理"], [2, "已查看"]],
-    AvailablesStatus: [[0, "禁用"], [1, "可用"]],
-    SettleClass: [[0, "现金"], [1, "预付扣款"]],
-    EnumSexClass: [[0, "不限"], [1, "男"], [2, "女"]],
-    EnumUserType: [[1, "手机端app"], [2, "手机wap端"]],
-    EnumPayClass: [[1, "支付宝"], [2, "微信"], [3, "微信扫码"], [100, "绑定手机奖励"]],
-    EnumPayStatus: [[0, "新申请"], [2, "充值失败"], [3, "成功"]],
-    EnumMoneyClass: [[0, "购买"], [1, "赠送"]],
-    EnumUserFrom: [[1, "其他"], [2, "微博"], [3, "qq"], [4, "微信"], [10, "app注册"], [11, "wap注册"], [12, "微博绑定"], [13, "qq绑定"], [14, "微信绑定"]],
-    EnumSignType: [[0, "未签约"], [1, "分成"], [2, "买断"], [3, "保底"], [4, "买断整本"], [9, "保底"], [15, "道具结算"], [30, "全勤奖励"]],
-    EnumLogType: [[0, "app登录"], [1, "wap登录"]],
-    EnumAuditStatus: [[-10, "下线"], [-1, "审核失败"], [0, "编辑中"], [1, "提交申请"], [2, "通过审核"], [3, "已发布"]],
-    EnumHandleStatus: [[-1, "处理失败"], [0, "新申请"], [1, "待处理"], [2, "处理成功"]],
-    EnumAuthorLevel: [[1, "一级"], [2, "二级"], [3, "三级"], [4, "四级"], [5, "五级"]],
-    EnumChannelClass: [[0, "特级"], [1, "一级"], [2, "二级"], [3, "三级"], [4, "四级"], [5, "五级"], [6, "六级"], [7, "七级"], [8, "八级"], [9, "九级"], [1100, "千级"]],
-    EnumVipChapter: [[0, "公众"], [1, "VIP"]],
-    EnumBookLeveType: [[1, "A级"], [2, "B级"], [3, "C级"], [4, "普通"], [5, "S级"]],
+    TrueOrFalse: [[0, "False"], [1, "Ture"]],
+    EnumUserCommendStatus: [[0, "New"], [1, "Processed"], [2, "Viewed"]],
+    AvailablesStatus: [[0, "Forbidden"], [1, "Available"]],
+    SettleClass: [[0, "Cash"], [1, "Prepaid Deduction"]],
+    EnumSexClass: [[0, "No Limit"], [1, "Male"], [2, "Female"]],
+    EnumUserType: [[1, "Mobile app"], [2, "Mobile wap"]],
+    // EnumPayClass: [[1, "支付宝"], [2, "微信"], [3, "微信扫码"], [100, "绑定手机奖励"]],
+    EnumPayStatus: [[0, "New Application"], [2, "Purchase Failed"], [3, "Purchase successfully"]],
+    EnumMoneyClass: [[0, "Buy"], [1, "Gift"]],
+    // EnumUserFrom: [[1, "其他"], [2, "微博"], [3, "qq"], [4, "微信"], [10, "app注册"], [11, "wap注册"], [12, "微博绑定"], [13, "qq绑定"], [14, "微信绑定"]],
+    EnumSignType: [[0, "Not Contracted"], [1, "Division"], [2, "Buyout"], [3, "Guaranteed"], [4, "Buyout Whole Book"], [9, "Guaranteed"], [15, "Prop Settlement"], [30, "Full Attendance Reward"]],
+    EnumLogType: [[0, "app Log In"], [1, "wap Log In"]],
+    EnumAuditStatus: [[-10, "Offline"], [-1, "Audit Failed"], [0, "Editing"], [1, "Submit Application"], [2, "Approved"], [3, "Published"]],
+    EnumHandleStatus: [[-1, "Processing Failed"], [0, "New Application"], [1, "Process Pending"], [2, "Process Successfully"]],
+    EnumAuthorLevel: [[1, "First Grade"], [2, "Twice Grade"], [3, "Third Grade"], [4, "Forth Grade"], [5, "Fifth Grade"]],
+    EnumChannelClass: [[0, "Special Grade"], [1, "First Grade"], [2, "Twice Grade"], [3, "Third Grade"], [4, "Forth Grade"], [5, "Fifth Grade"], [6, "Sixth Grade"], [7, "Seventh Grade"], [8, "Eighth Grade"], [9, "Nineth Grade"], [1100, "Thousand Grade"]],
+    EnumVipChapter: [[0, "Public"], [1, "VIP"]],
+    EnumBookLeveType: [[1, "A Grade"], [2, "B Grade"], [3, "C Grade"], [4, "Nomal Grade"], [5, "S Grade"]],
     EnumBookLeveTypeL: [[1, "A"], [2, "B"], [3, "C"]],
-    EnumAdmActClass: [[50, "签约等级修改"], [51, "封面修改"], [52, "渠道添加"], [53, "渠道修改"], [54, "渠道删除"], [55, "章节删除"]],
-    EnumSettlementType: [[0, "未结算"], [1, "已结算"], [2, "结算失败"]],
-    EnumBookProcess: [[0, "连载"], [1, "完结"]],
-    EnumAuthStatus: [[1 ,"独家"], [2, "非独家"]]
+    EnumAdmActClass: [[50, "Contract Grade Modification"], [51, "Cover Modification"], [52, "Channel Addition"], [53, "Channel Modification"], [54, "Channel Deletion"], [55, "Chapter Deletion"]],
+    EnumSettlementType: [[0, "Unsettled"], [1, "Settled"], [2, "Settlement Failed"]],
+    EnumBookProcess: [[0, "Ongoing"], [1, "Complete"]],
+    EnumAuthStatus: [[1, "Exclusive"], [2, "Non-exclusive"]]
 };
 
 function dateToDate(date) {
@@ -598,7 +591,7 @@ function initSubmitButton(wait) {
                 return false;
             }
             var oldVal = $(this).val();
-            $(this).val("正在处理，请稍等(" + wait + ")");
+            $(this).val("Processing, please wait ( " + wait + " ) ");
             $(this).attr("submited", "1");
             setTimeout('ButtonLimit("' + $(this).attr("id") + '",' + wait + ',"' + oldVal + '")', 1000);
         });
@@ -607,7 +600,7 @@ function initSubmitButton(wait) {
 function ButtonLimit(objId, wait, oldVal) {
     wait--;
     if (wait > 0) {
-        $("#" + objId).val("正在处理，请稍等(" + wait + ")");
+        $("#" + objId).val("Processing, please wait ( " + wait + " ) ");
         setTimeout('ButtonLimit("' + objId + '",' + wait + ',"' + oldVal + '");', 1000);
     }
     else {
